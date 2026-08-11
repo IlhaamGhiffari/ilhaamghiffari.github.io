@@ -9,19 +9,19 @@
 		if (prefersReduced) return;
 		const ctx = gsap.context(() => {
 			gsap.to('.wi', {
-				y: 0,
-				duration: 1.3,
+				clipPath: 'inset(0 0 0% 0)',
+				duration: 1.2,
 				ease: 'power4.out',
-				stagger: 0.09,
-				delay: 0.15
+				stagger: 0.12,
+				delay: 0.3
 			});
 			gsap.from('[data-hero-fade]', {
-				y: 26,
+				y: 20,
 				opacity: 0,
-				duration: 0.9,
-				ease: 'power3.out',
-				stagger: 0.12,
-				delay: 1.0
+				duration: 0.8,
+				ease: 'expo.out',
+				stagger: 0.15,
+				delay: 1.3
 			});
 		}, section);
 		return () => ctx.revert();
@@ -41,8 +41,7 @@
 		</span>
 		<span class="line">
 			<span class="w"
-				><span class="wi">Ghiffari<span class="accent-dot">.</span></span></span
-			>
+				><span class="wi">Ghiffari<span class="accent-dot">·</span></span></span>
 		</span>
 	</h1>
 
@@ -79,11 +78,15 @@
 	.hero::before {
 		content: '';
 		position: absolute;
-		inset: 0;
+		top: 0;
+		bottom: 0;
+		/* glow extends to the true viewport edges when the 1520px cap kicks in */
+		left: calc((100vw - min(100vw, 1520px)) / -2);
+		right: calc((100vw - min(100vw, 1520px)) / -2);
 		pointer-events: none;
 		background: radial-gradient(
 			900px 700px at 82% 18%,
-			rgba(201, 242, 79, 0.07),
+			rgba(201, 242, 79, 0.05),
 			transparent 62%
 		);
 	}
@@ -103,9 +106,9 @@
 	.name {
 		font-family: var(--font-display);
 		font-weight: 400;
-		font-size: clamp(72px, 13.5vw, 188px);
+		font-size: clamp(68px, 12vw, 172px);
 		line-height: 0.94;
-		letter-spacing: -0.02em;
+		letter-spacing: -0.035em;
 	}
 
 	.line {
@@ -128,13 +131,15 @@
 
 	.wi {
 		display: inline-block;
-		transform: translateY(115%);
-		will-change: transform;
+		clip-path: inset(0 0 100% 0);
+		will-change: clip-path;
 	}
 
 	.accent-dot {
 		color: var(--accent);
 		font-style: italic;
+		font-size: 1.15em;
+		vertical-align: 0.02em;
 	}
 
 	.role {
@@ -210,7 +215,7 @@
 		right: var(--gutter);
 		bottom: calc(var(--section-y) * 0.55);
 		writing-mode: vertical-rl;
-		opacity: 0.45;
+		opacity: 0.35;
 		font-size: 10px;
 	}
 
@@ -229,7 +234,7 @@
 
 	.scroll-cue .line {
 		width: 1px;
-		height: 44px;
+		height: 56px;
 		background: linear-gradient(to bottom, var(--muted), transparent);
 		overflow: hidden;
 		position: relative;

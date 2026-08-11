@@ -8,6 +8,8 @@
 		<span class="mono-label">2024 — 2026</span>
 	</div>
 
+	<hr class="section-rule" />
+
 	<div class="rows" data-reveal-children>
 		{#each projects as p}
 			{#if p.href}
@@ -42,7 +44,7 @@
 						<span class="tags mono-label">{p.tags.join('  ·  ')}</span>
 					</span>
 					<span class="year mono-label">{p.year}</span>
-					<span class="lock mono-label" aria-hidden="true">🔒</span>
+					<span class="lock mono-label" aria-hidden="true">PRIVATE</span>
 				</div>
 			{/if}
 		{/each}
@@ -68,16 +70,11 @@
 		align-items: center;
 		padding: clamp(28px, 4.5vh, 48px) 14px;
 		border-top: 1px solid var(--line);
-		transition:
-			background 0.35s ease,
-			color 0.35s ease,
-			padding-left 0.35s ease;
+		transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
 	.row:hover {
-		background: var(--accent);
-		color: var(--accent-ink);
-		padding-left: 34px;
+		padding-left: 24px;
 	}
 
 	.idx {
@@ -97,6 +94,29 @@
 		font-size: clamp(30px, 4.2vw, 56px);
 		line-height: 1.02;
 		letter-spacing: -0.01em;
+		position: relative;
+		display: inline;
+	}
+
+	.title::after {
+		content: '';
+		position: absolute;
+		bottom: -2px;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background: var(--accent);
+		transform: scaleX(0);
+		transform-origin: left;
+		transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.row:hover .title {
+		color: var(--accent);
+	}
+
+	.row:hover .title::after {
+		transform: scaleX(1);
 	}
 
 	.note {
@@ -121,7 +141,7 @@
 	}
 
 	.row:hover .desc {
-		color: rgba(10, 10, 11, 0.72);
+		color: var(--ink-dim);
 	}
 
 	.tags {
@@ -131,7 +151,7 @@
 	}
 
 	.row:hover .tags {
-		opacity: 1;
+		opacity: 0.85;
 	}
 
 	.year {
@@ -143,8 +163,8 @@
 		transform: translate(-8px, 8px);
 		opacity: 0;
 		transition:
-			transform 0.35s ease,
-			opacity 0.35s ease;
+			transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+			opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
 	.row:hover .arrow {
@@ -153,8 +173,12 @@
 	}
 
 	.lock {
-		font-size: 14px;
-		opacity: 0.5;
+		font-size: 9px;
+		letter-spacing: 0.2em;
+		opacity: 0.4;
+		border: 1px solid var(--line);
+		padding: 3px 8px;
+		border-radius: 3px;
 	}
 
 	.is-static .desc {

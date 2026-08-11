@@ -71,14 +71,15 @@
 	.bigline {
 		font-family: var(--font-display);
 		font-weight: 400;
-		font-size: clamp(34px, 4.4vw, 62px);
+		font-size: clamp(36px, 4.8vw, 66px);
 		line-height: 1.06;
-		letter-spacing: -0.01em;
+		letter-spacing: -0.02em;
 	}
 
 	.bigline em {
 		font-style: italic;
 		color: var(--accent);
+		text-shadow: 0 0 40px rgba(201, 242, 79, 0.15);
 	}
 
 	.col-body {
@@ -106,11 +107,16 @@
 
 	.fact {
 		display: grid;
-		grid-template-columns: 150px 1fr;
+		grid-template-columns: 130px 1fr;
 		gap: 20px;
 		padding: 14px 0;
 		border-bottom: 1px solid var(--line);
 		font-size: 14px;
+		transition: color 0.25s ease;
+	}
+	
+	.fact:hover {
+		color: var(--ink);
 	}
 
 	.skills {
@@ -123,8 +129,8 @@
 	.chip {
 		font-size: 10.5px;
 		border: 1px solid var(--line);
-		border-radius: 999px;
-		padding: 7px 14px;
+		border-radius: 4px;
+		padding: 5px 12px;
 		transition:
 			border-color 0.25s ease,
 			color 0.25s ease,
@@ -139,6 +145,18 @@
 	.timeline {
 		margin-top: 26px;
 		border-top: 1px solid var(--line);
+		position: relative;
+		padding-left: 16px;
+	}
+
+	.timeline::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 1px;
+		background: var(--line);
 	}
 
 	.tl-row {
@@ -154,6 +172,8 @@
 	.when {
 		font-size: 10.5px;
 		opacity: 0.6;
+		color: var(--accent);
+		font-feature-settings: 'tnum';
 	}
 
 	.where {

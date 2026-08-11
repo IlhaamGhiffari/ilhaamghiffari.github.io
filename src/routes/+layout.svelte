@@ -3,24 +3,39 @@
 	import { onMount } from 'svelte';
 	import Cursor from '$lib/components/Cursor.svelte';
 	import Nav from '$lib/components/Nav.svelte';
+	import Preloader from '$lib/components/Preloader.svelte';
 	import { cleanupMotion, initMotion, revealAll } from '$lib/motion';
+
+	function handleReady() {
+		revealAll();
+	}
 
 	onMount(() => {
 		initMotion();
-		revealAll();
 		return cleanupMotion;
 	});
 </script>
 
 <svelte:head>
 	<title>Ilhaam Ghiffari — Platform Engineer</title>
-	<meta name="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
+	<meta property="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
 	<meta
-		name="og:description"
+		property="og:description"
 		content="Cloud infrastructure, IaC, Kubernetes and CI/CD — deployed via GitHub Actions to GitHub Pages."
 	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://ilhaamghiffari.codes/" />
+	<meta property="og:image" content="https://ilhaamghiffari.codes/preview/hero.png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Ilhaam Ghiffari — Platform Engineer" />
+	<meta
+		name="twitter:description"
+		content="Cloud infrastructure, IaC, Kubernetes and CI/CD."
+	/>
+	<meta name="twitter:image" content="https://ilhaamghiffari.codes/preview/hero.png" />
 </svelte:head>
 
+<Preloader onready={handleReady} />
 <Cursor />
 <Nav />
 <main>
