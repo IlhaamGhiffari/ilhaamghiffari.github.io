@@ -35,7 +35,7 @@
 				class="lang-btn"
 				class:active={lang.value === 'en'}
 				onclick={() => setLang('en')}
-				aria-label="English"
+				aria-label="EN — English"
 			>EN</button
 			>
 			<span class="sep">/</span>
@@ -43,7 +43,7 @@
 				class="lang-btn"
 				class:active={lang.value === 'id'}
 				onclick={() => setLang('id')}
-				aria-label="Bahasa Indonesia"
+				aria-label="ID — Bahasa Indonesia"
 			>ID</button
 			>
 		</div>
@@ -77,6 +77,8 @@
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--ink);
+		padding: 12px 0;
+		margin: -12px 0;
 	}
 
 	.accent {
@@ -146,7 +148,8 @@
 		font: inherit;
 		letter-spacing: inherit;
 		color: var(--muted);
-		padding: 6px 2px;
+		padding: 8px 4px;
+		margin: -2px 0;
 		opacity: 0.6;
 		transition:
 			opacity 0.2s ease,

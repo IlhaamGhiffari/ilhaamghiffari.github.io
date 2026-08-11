@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>404 — Ilhaam Ghiffari</title>
+		<style>
+			:root {
+				--bg: #0a0a0b;
+				--ink: #eeece4;
+				--muted: #8b8981;
+				--accent: #c9f24f;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				background: var(--bg);
+				color: var(--ink);
+				font-family: 'Inter', system-ui, sans-serif;
+				min-height: 100svh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				padding: 24px;
+			}
+			.wrap {
+				max-width: 560px;
+			}
+			.code {
+				font-family: 'Georgia', 'Times New Roman', serif;
+				font-size: clamp(96px, 22vw, 180px);
+				line-height: 0.9;
+				letter-spacing: -0.02em;
+			}
+			.code em {
+				font-style: italic;
+				color: var(--accent);
+			}
+			.msg {
+				margin-top: 28px;
+				font-size: 15px;
+				line-height: 1.7;
+				color: var(--muted);
+			}
+			a {
+				display: inline-block;
+				margin-top: 36px;
+				font-family: ui-monospace, 'SF Mono', Menlo, monospace;
+				font-size: 12px;
+				letter-spacing: 0.18em;
+				text-transform: uppercase;
+				color: var(--accent);
+				text-decoration: none;
+				border-bottom: 1px solid var(--accent);
+				padding-bottom: 6px;
+			}
+			a:hover {
+				opacity: 0.75;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="code">4<em>0</em>4</div>
+			<p class="msg">Page not found — this route doesn't exist.<br />But the infra is still up. 🙂</p>
+			<a href="/">← Back to ilhaamghiffari.codes</a>
+		</div>
+	</body>
+</html>

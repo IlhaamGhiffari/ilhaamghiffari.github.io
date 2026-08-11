@@ -95,7 +95,7 @@
 	}
 
 	.idx {
-		opacity: 0.6;
+		opacity: 0.85;
 	}
 
 	.main {
@@ -181,7 +181,7 @@
 	}
 
 	.year {
-		opacity: 0.55;
+		opacity: 0.85;
 	}
 
 	.arrow {
@@ -196,7 +196,7 @@
 	.lock {
 		font-size: 9px;
 		letter-spacing: 0.2em;
-		opacity: 0.4;
+		color: var(--ink-dim);
 		border: 1px solid var(--line);
 		padding: 3px 8px;
 		border-radius: 3px;
