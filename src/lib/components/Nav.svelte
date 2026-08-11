@@ -126,7 +126,7 @@
 
 	.place {
 		color: var(--muted);
-		opacity: 0.5;
+		opacity: 0.8;
 	}
 
 	.right {
@@ -150,7 +150,7 @@
 		color: var(--muted);
 		padding: 8px 4px;
 		margin: -2px 0;
-		opacity: 0.6;
+		opacity: 0.75;
 		transition:
 			opacity 0.2s ease,
 			color 0.2s ease;

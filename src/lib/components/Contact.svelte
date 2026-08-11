@@ -118,7 +118,7 @@
 		flex-wrap: wrap;
 		gap: 12px 28px;
 		font-size: 10px;
-		opacity: 0.55;
+		opacity: 0.85;
 	}
 	
 	.top-link {
