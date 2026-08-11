@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { lang, setLang, t } from '$lib/i18n';
+	import { lang, setLang, t } from '$lib/i18n.svelte';
 
 	const links = [
 		{ key: 'nav.work', href: '#work' },
