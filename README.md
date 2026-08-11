@@ -36,7 +36,7 @@ project repo instead, add `export const base = '/<repo>'` in `src/routes/+layout
 ## TODO before going live
 
 - [x] Email aktif di `Contact.svelte`: ghiffariilhaam@gmail.com
-- [ ] DNS di registrar: 4× A record `@` → GitHub IPs + CNAME `www` → `ilhaamghiffari.github.io`
+- [x] DNS di Name.com: 4× A record `@` → GitHub IPs + CNAME `www` → `ilhaamghiffari.github.io` — **live: https://ilhaamghiffari.codes**
 - [ ] (Opsional) tambah `static/resume.pdf` + link "Resume" di nav
 - [ ] (Opsional) LinkedIn link di contact section
 - [ ] Pilih nama repo: `ilhaamghiffari.github.io` (user site, clean root URL)
