@@ -58,9 +58,6 @@ export const marqueeItems = [
 	'PROMETHEUS',
 	'GRAFANA',
 	'OIDC',
-	'F.J. MOCK',
-	'ETo FAO-56',
-	'DEBIT ANDALAN',
 	'PYTHON',
 	'PROPHET'
 ];
@@ -86,8 +83,6 @@ export const skills = [
 	'MongoDB',
 	'Streamlit',
 	'Prophet',
-	'F.J. Mock',
-	'ETo FAO-56',
 	'Git',
 	'Linux'
 ];
@@ -95,7 +90,6 @@ export const skills = [
 export const timeline: { when: string; what: string; where?: string }[] = [
 	{ when: '2026', what: 'Top 20 Datathon — AI Impact Challenge', where: 'Microsoft Elevate × Dicoding' },
 	{ when: '2026', what: 'S.Kom Informatics, GPA 3.77', where: 'Universitas Syiah Kuala' },
-	{ when: '2025–26', what: 'Hydrological modeling support — F.J. Mock, Q95', where: 'Civil engineering study, Krueng Aceh' },
 	{ when: '2024', what: 'ML Cohort — Bangkit Academy', where: 'DermaScan capstone' },
 	{ when: 'Intern', what: 'IT Staff', where: 'BWS Sumatera I — Streamlit dashboard, MongoDB' },
 	{ when: 'Academic', what: 'Lab Assistant', where: 'Big Data Lab, USK' }

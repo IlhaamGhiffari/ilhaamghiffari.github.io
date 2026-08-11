@@ -7,7 +7,7 @@
 		<div class="col-label">
 			<span class="mono-label" data-reveal>About — 05</span>
 			<h2 class="bigline" data-reveal>
-				Engineer by trade,<br /><em>hydrologist</em> by curiosity.
+				Engineer by trade,<br /><em>curious</em> by default.
 			</h2>
 		</div>
 
@@ -17,12 +17,6 @@
 				from Universitas Syiah Kuala (GPA 3.77). I build cloud infrastructure that ships:
 				Terraform, Kubernetes, GitOps with ArgoCD, CI/CD secured by OIDC, and observability
 				on top.
-			</p>
-			<p data-reveal>
-				The other half is water: I help a civil engineering study with hydrological
-				modeling — debit andalan (Q95) via the F.J. Mock model and FAO-56
-				evapotranspiration. What started as a favor to a friend turned into working
-				knowledge of how dams and intakes get their numbers.
 			</p>
 			<p data-reveal>
 				Recently, my team placed <span class="hl">Top 20</span> at the Datathon AI Impact

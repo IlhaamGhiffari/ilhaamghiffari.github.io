@@ -32,7 +32,7 @@
 	<div class="kicker mono-label" data-hero-fade>
 		<span>Portfolio — 2026</span>
 		<span class="dot">●</span>
-		<span>Platform Engineering · Water Resources</span>
+		<span>Platform Engineering</span>
 	</div>
 
 	<h1 class="name">
@@ -46,9 +46,7 @@
 		</span>
 	</h1>
 
-	<p class="role mono-label" data-hero-fade>
-		Platform Engineer <span class="amp">&</span> Hydrology Modeling
-	</p>
+	<p class="role mono-label" data-hero-fade>Platform Engineer</p>
 
 	<div class="cta-row" data-hero-fade>
 		<a class="cta" href="#work" data-cursor>Selected work <span class="arw">↓</span></a>
@@ -142,10 +140,6 @@
 	.role {
 		margin-top: clamp(24px, 4vh, 44px);
 		font-size: 13px;
-	}
-
-	.amp {
-		color: var(--accent);
 	}
 
 	.cta-row {

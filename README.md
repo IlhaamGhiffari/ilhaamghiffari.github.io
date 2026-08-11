@@ -5,7 +5,7 @@
 [![Svelte](https://img.shields.io/badge/Svelte-5-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
 [![License](https://img.shields.io/badge/license-MIT-0a0a0b?logo=open-source-initiative&logoColor=white)](LICENSE)
 
-Awwwards-style portfolio for [Ilhaam Ghiffari](https://github.com/IlhaamGhiffari) — platform engineer with a side of hydrological modeling (F.J. Mock, debit andalan). Built with **SvelteKit** (static adapter), animated with **GSAP** + **Lenis**, and deployed to **GitHub Pages** via **GitHub Actions**.
+Awwwards-style portfolio for [Ilhaam Ghiffari](https://github.com/IlhaamGhiffari) — platform engineer. Built with **SvelteKit** (static adapter), animated with **GSAP** + **Lenis**, and deployed to **GitHub Pages** via **GitHub Actions**.
 
 ![Portfolio hero](static/preview/hero.png)
 

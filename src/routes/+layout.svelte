@@ -17,7 +17,7 @@
 	<meta name="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
 	<meta
 		name="og:description"
-		content="Cloud infrastructure, IaC and CI/CD — plus F.J. Mock hydrological modeling (debit andalan)."
+		content="Cloud infrastructure, IaC, Kubernetes and CI/CD — deployed via GitHub Actions to GitHub Pages."
 	/>
 </svelte:head>
 
