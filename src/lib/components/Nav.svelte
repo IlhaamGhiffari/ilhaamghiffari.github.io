@@ -4,7 +4,8 @@
 	const links = [
 		{ label: 'Work', href: '#work' },
 		{ label: 'About', href: '#about' },
-		{ label: 'Contact', href: '#contact' }
+		{ label: 'Contact', href: '#contact' },
+		{ label: 'Resume', href: '/resume.pdf' }
 	];
 
 	let scrolled = false;
@@ -111,12 +112,28 @@
 			display: none;
 		}
 		.nav {
-			padding-top: 16px;
-			padding-bottom: 16px;
+			padding-top: 14px;
+			padding-bottom: 14px;
 		}
 		.brand {
-			font-size: 10px;
-			letter-spacing: 0.03em;
+			font-size: 9px;
+			letter-spacing: 0.02em;
+		}
+		.links {
+			gap: 12px;
+		}
+		.link {
+			padding: 8px 6px;
+			margin: -8px -6px;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.brand {
+			display: none;
+		}
+		.links {
+			margin-left: auto;
 		}
 	}
 </style>

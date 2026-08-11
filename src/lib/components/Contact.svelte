@@ -16,6 +16,14 @@
 			data-cursor
 			>github.com/IlhaamGhiffari</a
 		>
+		<a
+			class="gh"
+			href="https://www.linkedin.com/in/ilhaam-ghiffari-3b3b27217"
+			target="_blank"
+			rel="noreferrer noopener"
+			data-cursor
+			>linkedin.com/in/ilhaam-ghiffari</a
+		>
 	</div>
 
 	<footer class="foot mono-label">
