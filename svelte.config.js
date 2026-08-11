@@ -5,7 +5,11 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 const config = {
 	preprocess: vitePreprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			// hash links like /#work target sections on the home page, not this page
+			handleMissingId: 'ignore'
+		}
 	}
 };
 

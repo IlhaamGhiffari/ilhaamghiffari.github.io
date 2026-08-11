@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { prefersReduced } from '$lib/motion';
+	import Terminal from './Terminal.svelte';
 
 	let section: HTMLElement;
 
@@ -29,7 +30,9 @@
 </script>
 
 <section class="hero" bind:this={section} id="top">
-	<div class="kicker mono-label" data-hero-fade>
+	<div class="hero-inner">
+		<div class="hero-main">
+			<div class="kicker mono-label" data-hero-fade>
 		<span>Portfolio — 2026</span>
 		<span class="dot">●</span>
 		<span>Platform Engineering</span>
@@ -51,6 +54,12 @@
 		<a class="cta" href="#work" data-cursor>Selected work <span class="arw">↓</span></a>
 		<a class="cta" href="#about" data-cursor>About</a>
 		<span class="status"><span class="pulse"></span>Open for internship — 2026</span>
+		</div>
+		</div>
+
+		<div class="term-wrap">
+			<Terminal />
+		</div>
 	</div>
 
 	<div class="coords mono-label" aria-hidden="true" data-hero-fade>
@@ -89,6 +98,26 @@
 			rgba(201, 242, 79, 0.05),
 			transparent 62%
 		);
+	}
+
+	.hero-inner {
+		display: grid;
+		grid-template-columns: 1fr 420px;
+		gap: clamp(32px, 4vw, 72px);
+		align-items: center;
+	}
+
+	.hero-main {
+		min-width: 0;
+	}
+
+	@media (max-width: 1080px) {
+		.hero-inner {
+			grid-template-columns: 1fr;
+		}
+		.term-wrap {
+			display: none;
+		}
 	}
 
 	.kicker {
@@ -220,7 +249,7 @@
 		right: var(--gutter);
 		bottom: calc(var(--section-y) * 0.55);
 		writing-mode: vertical-rl;
-		opacity: 0.35;
+		opacity: 0.55;
 		font-size: 10px;
 	}
 

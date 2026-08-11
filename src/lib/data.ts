@@ -1,3 +1,10 @@
+export type CaseStudy = {
+	problem: string;
+	approach: string;
+	results: string[];
+	stack: string[];
+};
+
 export type Project = {
 	index: string;
 	title: string;
@@ -7,6 +14,8 @@ export type Project = {
 	href?: string;
 	external?: boolean;
 	note?: string;
+	slug?: string;
+	caseStudy?: CaseStudy;
 };
 
 export const projects: Project[] = [
@@ -16,9 +25,31 @@ export const projects: Project[] = [
 		desc: 'Production platform on Azure AKS, deployed GitOps-style. Terraform for infrastructure, GitHub Actions + OIDC for CI/CD, Trivy in the pipeline, Prometheus/Grafana for observability.',
 		tags: ['Terraform', 'Kubernetes', 'ArgoCD', 'GitHub Actions', 'OIDC', 'Trivy', 'Prometheus'],
 		year: '2026',
-		href: 'https://ilhaamghiffari.tech',
-		external: true,
-		note: 'LIVE'
+		slug: 'golden-path',
+		note: 'LIVE',
+		caseStudy: {
+			problem:
+				'A real platform-engineering showcase — not a toy demo. The goal: a production-grade platform on a public cloud, deployed entirely through GitOps and CI/CD, with live traffic and real observability.',
+			approach:
+				'Azure infrastructure provisioned with Terraform (AKS, networking, identity). GitHub Actions builds and ships with OIDC federation — no long-lived cloud credentials. ArgoCD watches the Git repo and syncs the cluster to the declared state. Trivy scans images in the pipeline. Prometheus + Grafana collect and visualize cluster metrics.',
+			results: [
+				'Live at ilhaamghiffari.tech — phases 1–3 shipped end-to-end',
+				'Push to main → built, scanned, and deployed with zero manual steps',
+				'Everything as code: infrastructure, deployment, and configuration',
+				'Cloud credentials replaced by short-lived OIDC tokens'
+			],
+			stack: [
+				'Terraform',
+				'Azure AKS',
+				'Kubernetes',
+				'ArgoCD',
+				'GitHub Actions',
+				'OIDC',
+				'Trivy',
+				'Prometheus',
+				'Grafana'
+			]
+		}
 	},
 	{
 		index: '02',
@@ -85,6 +116,18 @@ export const skills = [
 	'Prophet',
 	'Git',
 	'Linux'
+];
+
+export const credentials: { name: string; issuer: string; year: string }[] = [
+	{ name: 'Machine Learning Cohort', issuer: 'Bangkit Academy', year: '2024' },
+	{ name: 'Introduction to DevOps', issuer: 'IBM', year: '2026' },
+	{ name: 'Introduction to Cloud Computing', issuer: 'IBM', year: '2026' },
+	{ name: 'Getting Started with Git and GitHub', issuer: 'IBM', year: '2026' },
+	{ name: 'Continuous Integration & Continuous Delivery (CI/CD)', issuer: 'IBM', year: '2026' },
+	{ name: 'Foundations: Data, Data, Everywhere', issuer: 'Google', year: '2024' },
+	{ name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'Mathematics for Machine Learning & Data Science', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'TensorFlow Developer Specialization', issuer: 'DeepLearning.AI', year: '2024' }
 ];
 
 export const timeline: { when: string; what: string; where?: string }[] = [

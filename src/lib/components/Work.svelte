@@ -12,7 +12,21 @@
 
 	<div class="rows" data-reveal-children>
 		{#each projects as p}
-			{#if p.href}
+			{#if p.slug}
+				<a class="row" href={`/work/${p.slug}`} data-cursor>
+					<span class="idx mono-label">{p.index}</span>
+					<span class="main">
+						<span class="title">
+							{p.title}
+							{#if p.note}<span class="note">{p.note}</span>{/if}
+						</span>
+						<span class="desc">{p.desc}</span>
+						<span class="tags mono-label">{p.tags.join('  ·  ')}</span>
+					</span>
+					<span class="year mono-label">{p.year}</span>
+					<span class="arrow" aria-hidden="true">→</span>
+				</a>
+			{:else if p.href}
 				<a
 					class="row"
 					href={p.href}

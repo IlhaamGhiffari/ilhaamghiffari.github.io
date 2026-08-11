@@ -32,6 +32,21 @@
 		content="Cloud infrastructure, IaC, Kubernetes and CI/CD."
 	/>
 	<meta name="twitter:image" content="https://ilhaamghiffari.codes/preview/hero.png" />
+	<link rel="canonical" href="https://ilhaamghiffari.codes/" />
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Person",
+			"name": "Muhaammad Ilhaam Ghiffari",
+			"url": "https://ilhaamghiffari.codes",
+			"jobTitle": "Platform Engineer",
+			"email": "mailto:ghiffariilhaam@gmail.com",
+			"sameAs": [
+				"https://github.com/IlhaamGhiffari",
+				"https://www.linkedin.com/in/ilhaam-ghiffari-3b3b27217"
+			]
+		}
+	</script>
 </svelte:head>
 
 <Preloader onready={handleReady} />

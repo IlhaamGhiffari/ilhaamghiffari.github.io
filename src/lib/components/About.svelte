@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { facts, skills, timeline } from '$lib/data';
+	import { credentials, facts, skills, timeline } from '$lib/data';
 </script>
 
 <section class="section about" id="about">
@@ -37,6 +37,18 @@
 				{#each skills as s}
 					<span class="chip mono-label">{s}</span>
 				{/each}
+			</div>
+
+			<div class="credentials" data-reveal>
+				<h3 class="mono-label creds-head">Credentials</h3>
+				<ul>
+					{#each credentials as c}
+						<li>
+							<span class="cname">{c.name}</span>
+							<span class="cissuer mono-label">{c.issuer} · {c.year}</span>
+						</li>
+					{/each}
+				</ul>
 			</div>
 
 			<div class="timeline" data-reveal>
@@ -144,6 +156,38 @@
 			border-color: var(--accent);
 			color: var(--accent);
 		}
+	}
+
+	.credentials {
+		margin-top: 30px;
+	}
+
+	.creds-head {
+		margin-bottom: 12px;
+		color: var(--accent);
+	}
+
+	.credentials ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.credentials li {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 16px;
+		padding: 10px 0;
+		border-bottom: 1px solid var(--line);
+		font-size: 13.5px;
+		flex-wrap: wrap;
+	}
+
+	.cissuer {
+		font-size: 10px;
+		opacity: 0.55;
+		white-space: nowrap;
 	}
 
 	.timeline {
