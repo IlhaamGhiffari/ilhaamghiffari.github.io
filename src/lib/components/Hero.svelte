@@ -78,7 +78,11 @@
 	.hero::before {
 		content: '';
 		position: absolute;
-		inset: 0;
+		top: 0;
+		bottom: 0;
+		/* glow extends to the true viewport edges when the 1520px cap kicks in */
+		left: calc((100vw - min(100vw, 1520px)) / -2);
+		right: calc((100vw - min(100vw, 1520px)) / -2);
 		pointer-events: none;
 		background: radial-gradient(
 			900px 700px at 82% 18%,
