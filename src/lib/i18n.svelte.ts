@@ -93,13 +93,17 @@ export function t(key: string): string {
 	return dict[lang.value][key] ?? key;
 }
 
-export function toggleLang() {
-	lang.value = lang.value === 'en' ? 'id' : 'en';
+export function setLang(l: Lang) {
+	lang.value = l;
 	try {
-		localStorage.setItem('lang', lang.value);
+		localStorage.setItem('lang', l);
 	} catch {
 		/* private mode etc. */
 	}
+}
+
+export function toggleLang() {
+	setLang(lang.value === 'en' ? 'id' : 'en');
 }
 
 if (typeof localStorage !== 'undefined') {

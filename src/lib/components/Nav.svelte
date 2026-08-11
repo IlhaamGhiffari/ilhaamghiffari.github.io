@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { lang, t, toggleLang } from '$lib/i18n.svelte';
+	import { lang, setLang, t } from '$lib/i18n';
 
 	const links = [
 		{ key: 'nav.work', href: '#work' },
@@ -30,9 +30,23 @@
 		{/each}
 	</nav>
 	<div class="right">
-		<button class="lang mono-label" onclick={toggleLang} data-cursor aria-label="Toggle language">
-			{lang.value === 'en' ? 'ID' : 'EN'}
-		</button>
+		<div class="lang" data-cursor>
+			<button
+				class="lang-btn"
+				class:active={lang.value === 'en'}
+				onclick={() => setLang('en')}
+				aria-label="English"
+			>EN</button
+			>
+			<span class="sep">/</span>
+			<button
+				class="lang-btn"
+				class:active={lang.value === 'id'}
+				onclick={() => setLang('id')}
+				aria-label="Bahasa Indonesia"
+			>ID</button
+			>
+		</div>
 		<div class="place mono-label">Aceh, ID</div>
 	</div>
 </header>
@@ -120,21 +134,32 @@
 	}
 
 	.lang {
+		display: flex;
+		align-items: center;
+		gap: 6px;
 		font-size: 10px;
 		letter-spacing: 0.14em;
-		color: var(--accent);
-		border: 1px solid var(--line);
-		border-radius: 4px;
-		padding: 5px 9px;
-		transition:
-			border-color 0.25s ease,
-			background 0.25s ease;
+		color: var(--muted);
 	}
 
-	@media (hover: hover) {
-		.lang:hover {
-			border-color: var(--accent);
-		}
+	.lang-btn {
+		font: inherit;
+		letter-spacing: inherit;
+		color: var(--muted);
+		padding: 6px 2px;
+		opacity: 0.6;
+		transition:
+			opacity 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.lang-btn.active {
+		color: var(--accent);
+		opacity: 1;
+	}
+
+	.sep {
+		opacity: 0.4;
 	}
 
 	@media (max-width: 640px) {
