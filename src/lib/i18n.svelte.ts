@@ -6,6 +6,7 @@ const dict: Record<Lang, Record<string, string>> = {
 	en: {
 		'nav.work': 'Work',
 		'nav.about': 'About',
+		'nav.blog': 'Blog',
 		'nav.contact': 'Contact',
 		'nav.resume': 'Resume',
 		'hero.ctaWork': 'Selected work',
@@ -23,6 +24,7 @@ const dict: Record<Lang, Record<string, string>> = {
 		'fact.languages': 'Languages',
 		'fact.statusValue': 'Open for internship — DevOps / Infra / Product Security',
 		'about.creds': 'Credentials',
+		'blog.head1': 'Writing — 01',
 		'work.head1': 'Selected work — 04',
 		'contact.h1': 'Have a project,',
 		'contact.h2': 'or an opening?',
@@ -48,6 +50,7 @@ const dict: Record<Lang, Record<string, string>> = {
 	id: {
 		'nav.work': 'Proyek',
 		'nav.about': 'Tentang',
+		'nav.blog': 'Blog',
 		'nav.contact': 'Kontak',
 		'nav.resume': 'Resume',
 		'hero.ctaWork': 'Proyek terpilih',
@@ -65,6 +68,7 @@ const dict: Record<Lang, Record<string, string>> = {
 		'fact.languages': 'Bahasa',
 		'fact.statusValue': 'Terbuka untuk magang — DevOps / Infra / Product Security',
 		'about.creds': 'Sertifikasi',
+		'blog.head1': 'Tulisan — 01',
 		'work.head1': 'Proyek terpilih — 04',
 		'contact.h1': 'Punya proyek,',
 		'contact.h2': 'atau lowongan?',

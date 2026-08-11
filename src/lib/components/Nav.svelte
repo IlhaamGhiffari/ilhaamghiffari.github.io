@@ -5,6 +5,7 @@
 	const links = [
 		{ key: 'nav.work', href: '#work' },
 		{ key: 'nav.about', href: '#about' },
+		{ key: 'nav.blog', href: '/blog' },
 		{ key: 'nav.contact', href: '#contact' },
 		{ key: 'nav.resume', href: '/resume.pdf' }
 	];
