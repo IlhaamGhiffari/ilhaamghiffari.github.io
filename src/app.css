@@ -116,12 +116,6 @@ button {
 	margin: 0;
 }
 
-/* ============ CUSTOM CURSOR ============ */
-html.has-cursor,
-html.has-cursor * {
-	cursor: none !important;
-}
-
 /* ============ GRAIN ============ */
 .grain {
 	position: fixed;
