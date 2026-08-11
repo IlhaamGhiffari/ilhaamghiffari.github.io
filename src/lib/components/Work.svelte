@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { projects } from '$lib/data';
+	import { t } from '$lib/i18n.svelte';
 </script>
 
 <section class="section work" id="work">
 	<div class="head" data-reveal>
-		<span class="mono-label">Selected work — 04</span>
+		<span class="mono-label">{t('work.head1')}</span>
 		<span class="mono-label">2024 — 2026</span>
 	</div>
 

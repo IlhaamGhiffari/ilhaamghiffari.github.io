@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { credentials, projects, skills } from '$lib/data';
+	import { t } from '$lib/i18n.svelte';
 
 	let lines = $state<string[]>([]);
 	let input = $state('');
@@ -14,18 +15,18 @@
 		booted = true;
 		const intro = [
 			'$ whoami',
-			'ilhaam — platform engineer, aceh ID',
+			t('term.welcome1'),
 			'',
-			'welcome to my interactive resume',
-			"type 'help' to see commands"
+			t('term.welcome2'),
+			t('term.welcome3')
 		];
 		let i = 0;
-		const t = setInterval(() => {
+		const timer = setInterval(() => {
 			if (i < intro.length) {
 				lines = [...lines, intro[i]];
 				i++;
 			} else {
-				clearInterval(t);
+				clearInterval(timer);
 			}
 		}, 200);
 	};
@@ -36,7 +37,7 @@
 			case 'help':
 				lines = [
 					...lines,
-					'available commands:',
+					t('term.helpIntro'),
 					'  whoami              about me',
 					'  ls                  list files',
 					'  cat <file>          read a file',
@@ -49,12 +50,7 @@
 				];
 				break;
 			case 'whoami':
-				lines = [
-					...lines,
-					'ilhaam — platform engineer from aceh, indonesia',
-					's.kom informatics (usyiah) · gpa 3.77',
-					'open for internship: devops / infra / product security'
-				];
+				lines = [...lines, t('term.whoami1'), t('term.whoami2'), t('term.whoami3')];
 				break;
 			case 'ls':
 				lines = [...lines, 'about.txt  skills.txt  projects.md  certs.txt  contact.txt'];
@@ -83,7 +79,7 @@
 				lines = [];
 				break;
 			default:
-				lines = [...lines, `command not found: ${cmd} — try 'help'`];
+				lines = [...lines, t('term.notFound').replace('{cmd}', cmd)];
 		}
 	};
 

@@ -1,11 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { lang, t, toggleLang } from '$lib/i18n.svelte';
 
 	const links = [
-		{ label: 'Work', href: '#work' },
-		{ label: 'About', href: '#about' },
-		{ label: 'Contact', href: '#contact' },
-		{ label: 'Resume', href: '/resume.pdf' }
+		{ key: 'nav.work', href: '#work' },
+		{ key: 'nav.about', href: '#about' },
+		{ key: 'nav.contact', href: '#contact' },
+		{ key: 'nav.resume', href: '/resume.pdf' }
 	];
 
 	let scrolled = false;
@@ -25,10 +26,15 @@
 	<a class="brand" href="#top" data-cursor>ilhaamghiffari<span class="accent">.codes</span></a>
 	<nav class="links" aria-label="Primary">
 		{#each links as l}
-			<a class="link mono-label" href={l.href} data-cursor>{l.label}</a>
+			<a class="link mono-label" href={l.href} data-cursor>{t(l.key)}</a>
 		{/each}
 	</nav>
-	<div class="place mono-label">Aceh, ID</div>
+	<div class="right">
+		<button class="lang mono-label" onclick={toggleLang} data-cursor aria-label="Toggle language">
+			{lang.value === 'en' ? 'ID' : 'EN'}
+		</button>
+		<div class="place mono-label">Aceh, ID</div>
+	</div>
 </header>
 
 <style>
@@ -105,6 +111,30 @@
 	.place {
 		color: var(--muted);
 		opacity: 0.5;
+	}
+
+	.right {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+	}
+
+	.lang {
+		font-size: 10px;
+		letter-spacing: 0.14em;
+		color: var(--accent);
+		border: 1px solid var(--line);
+		border-radius: 4px;
+		padding: 5px 9px;
+		transition:
+			border-color 0.25s ease,
+			background 0.25s ease;
+	}
+
+	@media (hover: hover) {
+		.lang:hover {
+			border-color: var(--accent);
+		}
 	}
 
 	@media (max-width: 640px) {

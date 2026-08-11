@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { credentials, facts, skills, timeline } from '$lib/data';
+	import { t } from '$lib/i18n.svelte';
 </script>
 
 <section class="section about" id="about">
@@ -7,28 +8,19 @@
 		<div class="col-label">
 			<span class="mono-label" data-reveal>About — 05</span>
 			<h2 class="bigline" data-reveal>
-				Engineer by trade,<br /><em>curious</em> by default.
+				{t('about.big1')}<br /><em>{t('about.big2')}</em> {t('about.big3')}
 			</h2>
 		</div>
 
 		<div class="col-body">
-			<p class="lede" data-reveal>
-				I'm Ilhaam — a platform engineer from Aceh, Indonesia, with a S.Kom in Informatics
-				from Universitas Syiah Kuala (GPA 3.77). I build cloud infrastructure that ships:
-				Terraform, Kubernetes, GitOps with ArgoCD, CI/CD secured by OIDC, and observability
-				on top.
-			</p>
-			<p data-reveal>
-				Recently, my team placed <span class="hl">Top 20</span> at the Datathon AI Impact
-				Challenge 2026 (Microsoft Elevate × Dicoding), forecasting food prices for
-				disaster resilience.
-			</p>
+			<p class="lede" data-reveal>{t('about.p1')}</p>
+			<p data-reveal>{t('about.p2')}</p>
 
 			<div class="facts" data-reveal>
 				{#each facts as [k, v]}
 					<div class="fact">
-						<span class="k mono-label">{k}</span>
-						<span class="v">{v}</span>
+						<span class="k mono-label">{t('fact.' + k.toLowerCase())}</span>
+						<span class="v">{k === 'STATUS' ? t('fact.statusValue') : v}</span>
 					</div>
 				{/each}
 			</div>
@@ -40,7 +32,7 @@
 			</div>
 
 			<div class="credentials" data-reveal>
-				<h3 class="mono-label creds-head">Credentials</h3>
+				<h3 class="mono-label creds-head">{t('about.creds')}</h3>
 				<ul>
 					{#each credentials as c}
 						<li>
@@ -103,11 +95,6 @@
 	.lede {
 		font-size: 17px;
 		line-height: 1.7;
-	}
-
-	.hl {
-		color: var(--accent);
-		font-weight: 600;
 	}
 
 	.facts {

@@ -1,7 +1,11 @@
+<script lang="ts">
+	import { t } from '$lib/i18n.svelte';
+</script>
+
 <section class="section contact" id="contact">
 	<span class="mono-label" data-reveal>Contact — 06</span>
 	<h2 class="cta" data-reveal>
-		Have a project,<br />or an <em>opening?</em>
+		{t('contact.h1')}<br /><em>{t('contact.h2')}</em>
 	</h2>
 
 	<div class="cta-row" data-reveal>
@@ -28,7 +32,7 @@
 
 	<footer class="foot mono-label">
 		<span>© 2026 Ilhaam Ghiffari</span>
-		<span class="mid">Built with SvelteKit · Deployed via GitHub Actions</span>
+		<span class="mid">{t('contact.foot2')}</span>
 		<span>Aceh, Indonesia</span>
 		<a href="#top" class="top-link" data-cursor>↑</a>
 	</footer>

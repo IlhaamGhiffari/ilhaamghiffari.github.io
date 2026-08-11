@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Project } from '$lib/data';
+	import { t } from '$lib/i18n.svelte';
 
 	let { data }: { data: { project: Project } } = $props();
 	const p = $derived(data.project);
@@ -14,7 +15,7 @@
 </svelte:head>
 
 <section class="section case">
-	<a class="back mono-label" href="/#work" data-cursor>← All work</a>
+	<a class="back mono-label" href="/#work" data-cursor>{t('cs.back')}</a>
 
 	<header class="head">
 		<span class="mono-label">Project {p.index} — {p.year}</span>
@@ -26,25 +27,26 @@
 
 	<div class="links">
 		<a class="live" href="https://ilhaamghiffari.tech" target="_blank" rel="noreferrer noopener" data-cursor>
-			Visit live site ↗
+			{t('cs.visitLive')}
 		</a>
-		<span class="mono-label">Repo: private — publish planned</span>
+		<span class="mono-label">{t('cs.repoNote')}</span>
+		<a class="post" href="/blog/deploying-golden-path" data-cursor>{t('cs.readPost')}</a>
 	</div>
 
 	{#if cs}
 		<div class="grid">
 			<div class="block" data-reveal>
-				<h3 class="mono-label">Problem</h3>
+				<h3 class="mono-label">{t('cs.problem')}</h3>
 				<p>{cs.problem}</p>
 			</div>
 			<div class="block" data-reveal>
-				<h3 class="mono-label">Approach</h3>
+				<h3 class="mono-label">{t('cs.approach')}</h3>
 				<p>{cs.approach}</p>
 			</div>
 		</div>
 
 		<div class="diagram" data-reveal>
-			<div class="diagram-head mono-label">Architecture — Azure AKS + GitOps</div>
+			<div class="diagram-head mono-label">{t('cs.archLabel')}</div>
 			<!-- Architecture diagram: dark theme, semantic colors -->
 			<svg viewBox="0 0 920 500" role="img" aria-label="Golden Path architecture diagram">
 				<defs>
@@ -129,7 +131,7 @@
 		</div>
 
 		<div class="block results" data-reveal>
-			<h3 class="mono-label">Results</h3>
+			<h3 class="mono-label">{t('cs.results')}</h3>
 			<ul>
 				{#each cs.results as r}
 					<li>{r}</li>
@@ -138,7 +140,7 @@
 		</div>
 
 		<div class="block" data-reveal>
-			<h3 class="mono-label">Stack</h3>
+			<h3 class="mono-label">{t('cs.stack')}</h3>
 			<div class="chips">
 				{#each cs.stack as s}
 					<span class="chip mono-label">{s}</span>
@@ -147,7 +149,7 @@
 		</div>
 	{/if}
 
-	<a class="back bottom mono-label" href="/#work" data-cursor>← All work</a>
+	<a class="back bottom mono-label" href="/#work" data-cursor>{t('cs.back')}</a>
 </section>
 
 <style>
@@ -215,6 +217,26 @@
 		color: var(--accent);
 		border-bottom: 1px solid var(--accent);
 		padding-bottom: 4px;
+	}
+
+	.post {
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--ink);
+		border-bottom: 1px solid var(--line);
+		padding-bottom: 4px;
+		transition:
+			border-color 0.25s ease,
+			color 0.25s ease;
+	}
+
+	@media (hover: hover) {
+		.post:hover {
+			border-color: var(--accent);
+			color: var(--accent);
+		}
 	}
 
 	.grid {

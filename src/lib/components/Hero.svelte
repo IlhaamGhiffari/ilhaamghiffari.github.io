@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import gsap from 'gsap';
 	import { prefersReduced } from '$lib/motion';
+	import { t } from '$lib/i18n.svelte';
 	import Terminal from './Terminal.svelte';
 
 	let section: HTMLElement;
@@ -51,10 +52,10 @@
 	<p class="role mono-label" data-hero-fade>Platform Engineer</p>
 
 	<div class="cta-row" data-hero-fade>
-		<a class="cta" href="#work" data-cursor>Selected work <span class="arw">↓</span></a>
-		<a class="cta" href="#about" data-cursor>About</a>
-		<span class="status"><span class="pulse"></span>Open for internship — 2026</span>
-		</div>
+		<a class="cta" href="#work" data-cursor>{t('hero.ctaWork')} <span class="arw">↓</span></a>
+		<a class="cta" href="#about" data-cursor>{t('hero.ctaAbout')}</a>
+		<span class="status"><span class="pulse"></span>{t('hero.status')}</span>
+	</div>
 		</div>
 
 		<div class="term-wrap">
