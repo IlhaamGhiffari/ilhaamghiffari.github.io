@@ -1,54 +1,91 @@
-# portfolio — Ilhaam Ghiffari
+# Ilhaam Ghiffari — Portfolio
 
-Awwwards-style portfolio: **SvelteKit** (static adapter) + GSAP/ScrollTrigger + Lenis,
-deployed to **GitHub Pages** via GitHub Actions.
+[![Live](https://img.shields.io/website?up_message=live&down_message=offline&label=ilhaamghiffari.codes&url=https%3A%2F%2Filhaamghiffari.codes&color=0a0a0b)](https://ilhaamghiffari.codes)
+[![CI](https://github.com/IlhaamGhiffari/ilhaamghiffari.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/IlhaamGhiffari/ilhaamghiffari.github.io/actions/workflows/deploy.yml)
+[![Svelte](https://img.shields.io/badge/Svelte-5-FF3E00?logo=svelte&logoColor=white)](https://svelte.dev)
+[![License](https://img.shields.io/badge/license-MIT-0a0a0b?logo=open-source-initiative&logoColor=white)](LICENSE)
 
-## Local dev
+Awwwards-style portfolio for [Ilhaam Ghiffari](https://github.com/IlhaamGhiffari) — platform engineer & water-resources analyst. Built with **SvelteKit** (static adapter), animated with **GSAP** + **Lenis**, and deployed to **GitHub Pages** via **GitHub Actions**.
+
+![Portfolio hero](static/preview/hero.png)
+
+## ✨ Highlights
+
+- **Editorial dark design** — Instrument Serif display type, mono accents, film-grain texture
+- **Motion-forward** — split-text hero reveal, scroll-triggered animations (GSAP ScrollTrigger), smooth scrolling (Lenis), custom cursor
+- **Accessibility-minded** — semantic HTML, `prefers-reduced-motion` fully respected, keyboard-focus states
+- **Fully static** — prerendered output, no server required, fast on Pages
+- **Real content** — every project, metric, and link is verifiable (no placeholders)
+
+## 🛠 Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | [SvelteKit](https://svelte.dev) 5 — `@sveltejs/adapter-static` |
+| Language | TypeScript |
+| Animation | [GSAP](https://gsap.com) (ScrollTrigger) · [Lenis](https://lenis.darkroom.engineering) |
+| Fonts | Instrument Serif · Inter · JetBrains Mono (Google Fonts) |
+| Hosting | GitHub Pages |
+| CI/CD | GitHub Actions (`deploy.yml`) |
+
+## 📁 Project Structure
+
+```
+.
+├── .github/workflows/deploy.yml   # CI/CD — build & deploy to GitHub Pages
+├── src/
+│   ├── app.css                    # design tokens, reset, utilities
+│   ├── lib/
+│   │   ├── components/            # Hero, Work, About, Contact, Nav, Cursor, Marquee
+│   │   ├── data.ts                # content: projects, skills, timeline
+│   │   └── motion.ts              # Lenis + GSAP/ScrollTrigger wiring
+│   └── routes/                    # +layout.svelte, +page.svelte (prerendered)
+├── static/
+│   ├── CNAME                      # custom domain: ilhaamghiffari.codes
+│   └── preview/                   # screenshots used in this README
+└── package.json
+```
+
+## 🚀 Getting Started
+
+Requires Node.js 22+ and npm.
 
 ```bash
-npm install
-npm run dev        # dev server
-npm run build      # static build → build/
-npm run preview    # preview the static build
+npm install       # install dependencies
+npm run dev       # dev server → http://localhost:5173
+npm run check     # svelte-check (type checking)
+npm run build     # prerender static site → build/
+npm run preview   # serve the production build locally
 ```
 
-## Deploy
+## 🤖 CI/CD
 
-Push to `main` → the `.github/workflows/deploy.yml` workflow builds and publishes
-to GitHub Pages automatically.
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and publishes the site on every push to `main` (or manual `workflow_dispatch`):
 
-## Custom domain
+1. `checkout` + `setup-node` (v22, npm cache)
+2. `npm ci` → `npm run build` (prerendered static output)
+3. `upload-pages-artifact` → `deploy-pages` (Pages source: **GitHub Actions**)
 
-`static/CNAME` declares `ilhaamghiffari.codes` (apex). Point DNS at GitHub:
+No manual deploy steps — push and it ships.
 
-```
-A     @         → 185.199.108.153
-A     @         → 185.199.109.153
-A     @         → 185.199.110.153
-A     @         → 185.199.111.153
-CNAME www       → ilhaamghiffari.github.io
-```
+## 🌐 Custom Domain
 
-GitHub auto-provisions TLS (Let's Encrypt) and redirects `www` ↔ apex.
-(For a user-site repo `ilhaamghiffari.github.io`, no `base` path needed. If you use a
-project repo instead, add `export const base = '/<repo>'` in `src/routes/+layout.ts`.)
-
-## TODO before going live
-
-- [x] Email aktif di `Contact.svelte`: ghiffariilhaam@gmail.com
-- [x] DNS di Name.com: 4× A record `@` → GitHub IPs + CNAME `www` → `ilhaamghiffari.github.io` — **live: https://ilhaamghiffari.codes**
-- [ ] (Opsional) tambah `static/resume.pdf` + link "Resume" di nav
-- [ ] (Opsional) LinkedIn link di contact section
-- [ ] Pilih nama repo: `ilhaamghiffari.github.io` (user site, clean root URL)
-
-## Structure
+`ilhaamghiffari.codes` (apex) is registered via `static/CNAME`. DNS at the registrar:
 
 ```
-src/
-  app.css              # tokens, reset, utilities
-  lib/motion.ts        # Lenis + GSAP/ScrollTrigger init
-  lib/data.ts          # projects, facts, skills, timeline
-  lib/components/      # Hero, Marquee, Work, About, Contact, Nav, Cursor
-  routes/+layout.svelte
-  routes/+page.svelte
+A     @    → 185.199.108.153
+A     @    → 185.199.109.153
+A     @    → 185.199.110.153
+A     @    → 185.199.111.153
+CNAME www  → ilhaamghiffari.github.io
 ```
+
+TLS is auto-provisioned by GitHub (Let's Encrypt); `www` ↔ apex redirect is automatic.
+
+## 📄 License
+
+MIT — see [LICENSE](LICENSE).
+
+---
+
+© 2026 Muhaammad Ilhaam Ghiffari · [ilhaamghiffari.codes](https://ilhaamghiffari.codes)
