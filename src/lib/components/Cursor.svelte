@@ -14,30 +14,51 @@
 		let y = window.innerHeight / 2;
 		let rx = x;
 		let ry = y;
+		let tx = x;
+		let ty = y;
+		let hoveredEl: HTMLElement | null = null;
 		let raf = 0;
+
+		const applyPull = (e: MouseEvent) => {
+			if (!hoveredEl) return;
+			const rect = hoveredEl.getBoundingClientRect();
+			const dx = rect.left + rect.width / 2 - e.clientX;
+			const dy = rect.top + rect.height / 2 - e.clientY;
+			const dist = Math.hypot(dx, dy) || 1;
+			if (rect.width < 480) {
+				// magnetic pull, capped at 24px so the ring never strays far
+				const pull = Math.min(dist, 24) / dist;
+				tx = e.clientX + dx * pull;
+				ty = e.clientY + dy * pull;
+			} else {
+				// large elements (e.g. full-width project rows): no pull, follow mouse
+				tx = e.clientX;
+				ty = e.clientY;
+			}
+		};
 
 		const move = (e: MouseEvent) => {
 			x = e.clientX;
 			y = e.clientY;
+			if (hoveredEl) applyPull(e);
 		};
 
 		const over = (e: MouseEvent) => {
 			const target = (e.target as HTMLElement).closest('[data-cursor]') as HTMLElement | null;
+			hoveredEl = target;
 			if (target) {
 				ring.classList.add('is-hover');
-				const rect = target.getBoundingClientRect();
-				const cx = rect.left + rect.width / 2;
-				const cy = rect.top + rect.height / 2;
-				rx += (cx - rx) * 0.15;
-				ry += (cy - ry) * 0.15;
+				applyPull(e);
 			} else {
 				ring.classList.remove('is-hover');
+				tx = x;
+				ty = y;
 			}
 		};
 
 		const loop = () => {
-			rx += (x - rx) * 0.12;
-			ry += (y - ry) * 0.12;
+			rx += (tx - rx) * 0.12;
+			ry += (ty - ry) * 0.12;
 			if (dot) dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 			if (ring) ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
 			raf = requestAnimationFrame(loop);
