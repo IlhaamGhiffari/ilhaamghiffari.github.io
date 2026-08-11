@@ -90,7 +90,7 @@
 			background 0.25s ease;
 	}
 
-	.cursor-ring.is-hover {
+	.cursor-ring:global(.is-hover) {
 		width: 64px;
 		height: 64px;
 		background: none;
