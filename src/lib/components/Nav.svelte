@@ -7,7 +7,7 @@
 </script>
 
 <header class="nav">
-	<a class="brand mono-label" href="#top" data-cursor>ilhaam<span class="accent">.</span>dev</a>
+	<a class="brand" href="#top" data-cursor>ilhaamghiffari<span class="accent">.codes</span></a>
 	<nav class="links" aria-label="Primary">
 		{#each links as l}
 			<a class="link mono-label" href={l.href} data-cursor>{l.label}</a>
@@ -31,6 +31,10 @@
 	}
 
 	.brand {
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
 		color: #fff;
 	}
 
@@ -66,6 +70,10 @@
 		.nav {
 			padding-top: 16px;
 			padding-bottom: 16px;
+		}
+		.brand {
+			font-size: 10px;
+			letter-spacing: 0.03em;
 		}
 	}
 </style>

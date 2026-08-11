@@ -19,21 +19,26 @@ to GitHub Pages automatically.
 
 ## Custom domain
 
-`static/CNAME` declares `portfolio.ilhaamghiffari.tech`. Point DNS at GitHub:
+`static/CNAME` declares `ilhaamghiffari.codes` (apex). Point DNS at GitHub:
 
 ```
-CNAME  portfolio  →  ilhaamghiffari.github.io
+A     @         → 185.199.108.153
+A     @         → 185.199.109.153
+A     @         → 185.199.110.153
+A     @         → 185.199.111.153
+CNAME www       → ilhaamghiffari.github.io
 ```
 
+GitHub auto-provisions TLS (Let's Encrypt) and redirects `www` ↔ apex.
 (For a user-site repo `ilhaamghiffari.github.io`, no `base` path needed. If you use a
 project repo instead, add `export const base = '/<repo>'` in `src/routes/+layout.ts`.)
 
 ## TODO before going live
 
 - [x] Email aktif di `Contact.svelte`: ghiffariilhaam@gmail.com
+- [ ] DNS di registrar: 4× A record `@` → GitHub IPs + CNAME `www` → `ilhaamghiffari.github.io`
 - [ ] (Opsional) tambah `static/resume.pdf` + link "Resume" di nav
 - [ ] (Opsional) LinkedIn link di contact section
-- [ ] Set DNS CNAME `portfolio` → `ilhaamghiffari.github.io`
 - [ ] Pilih nama repo: `ilhaamghiffari.github.io` (user site, clean root URL)
 
 ## Structure
