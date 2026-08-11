@@ -19,9 +19,10 @@
 				on top.
 			</p>
 			<p data-reveal>
-				The other half of my work is water. I analyze streamflow availability — debit
-				andalan — with the F.J. Mock model and FAO-56 evapotranspiration, turning
-				climatology data into numbers that engineers design dams and intakes around.
+				The other half is water: I help a civil engineering study with hydrological
+				modeling — debit andalan (Q95) via the F.J. Mock model and FAO-56
+				evapotranspiration. What started as a favor to a friend turned into working
+				knowledge of how dams and intakes get their numbers.
 			</p>
 			<p data-reveal>
 				Recently, my team placed <span class="hl">Top 20</span> at the Datathon AI Impact

@@ -47,7 +47,7 @@
 	</h1>
 
 	<p class="role mono-label" data-hero-fade>
-		Platform Engineer <span class="amp">&</span> Water-Resources Analyst
+		Platform Engineer <span class="amp">&</span> Hydrology Modeling
 	</p>
 
 	<div class="cta-row" data-hero-fade>

@@ -23,10 +23,10 @@ export const projects: Project[] = [
 	{
 		index: '02',
 		title: 'Debit Andalan · Krueng Aceh',
-		desc: 'Water availability (Q95) analysis for the Indrapuri sub-DAS with the F.J. Mock model — NASA POWER climatology, FAO-56 ETo, daily rainfall series; validated against reference examples.',
+		desc: 'F.J. Mock modeling support for a civil engineering study — Q95 debit andalan for the Indrapuri sub-DAS from NASA POWER climatology (FAO-56 ETo, rainfall series), validated against reference examples.',
 		tags: ['Hydrology', 'F.J. Mock', 'FAO-56', 'ETo', 'Python'],
 		year: '2025–26',
-		note: 'CLIENT WORK'
+		note: 'COLLABORATION'
 	},
 	{
 		index: '03',
@@ -95,7 +95,7 @@ export const skills = [
 export const timeline: { when: string; what: string; where?: string }[] = [
 	{ when: '2026', what: 'Top 20 Datathon — AI Impact Challenge', where: 'Microsoft Elevate × Dicoding' },
 	{ when: '2026', what: 'S.Kom Informatics, GPA 3.77', where: 'Universitas Syiah Kuala' },
-	{ when: '2025–26', what: 'Debit andalan analyst (F.J. Mock, Q95)', where: 'Hydrology consultancy, Krueng Aceh' },
+	{ when: '2025–26', what: 'Hydrological modeling support — F.J. Mock, Q95', where: 'Civil engineering study, Krueng Aceh' },
 	{ when: '2024', what: 'ML Cohort — Bangkit Academy', where: 'DermaScan capstone' },
 	{ when: 'Intern', what: 'IT Staff', where: 'BWS Sumatera I — Streamlit dashboard, MongoDB' },
 	{ when: 'Academic', what: 'Lab Assistant', where: 'Big Data Lab, USK' }

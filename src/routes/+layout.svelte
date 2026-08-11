@@ -13,14 +13,11 @@
 </script>
 
 <svelte:head>
-	<title>Ilhaam Ghiffari — Platform Engineer & Water Resources Analyst</title>
-	<meta
-		name="og:title"
-		content="Ilhaam Ghiffari — Platform Engineer & Water Resources Analyst"
-	/>
+	<title>Ilhaam Ghiffari — Platform Engineer</title>
+	<meta name="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
 	<meta
 		name="og:description"
-		content="Cloud infrastructure, IaC and CI/CD on one side — hydrological modeling (F.J. Mock, debit andalan) on the other."
+		content="Cloud infrastructure, IaC and CI/CD — plus F.J. Mock hydrological modeling (debit andalan)."
 	/>
 </svelte:head>
 
