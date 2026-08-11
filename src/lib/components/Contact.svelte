@@ -118,6 +118,7 @@
 		flex-wrap: wrap;
 		gap: 12px 28px;
 		font-size: 10px;
+		color: var(--ink-dim);
 		opacity: 0.85;
 	}
 	

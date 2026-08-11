@@ -125,7 +125,7 @@
 	}
 
 	.place {
-		color: var(--muted);
+		color: var(--ink-dim);
 		opacity: 0.8;
 	}
 
@@ -147,7 +147,7 @@
 	.lang-btn {
 		font: inherit;
 		letter-spacing: inherit;
-		color: var(--muted);
+		color: var(--ink-dim);
 		padding: 8px 4px;
 		margin: -2px 0;
 		opacity: 0.75;
