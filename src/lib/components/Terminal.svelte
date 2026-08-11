@@ -95,7 +95,7 @@
 		<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
 		<span class="mono-label">ilhaam@portfolio: ~</span>
 	</div>
-	<div class="body">
+	<div class="body" data-lenis-prevent>
 		{#each lines as l}
 			<p class={l.startsWith('$') ? 'cmd' : ''}>{l}</p>
 		{/each}
