@@ -1,7 +1,6 @@
 <script lang="ts">
 	import '../app.css';
 	import { onMount } from 'svelte';
-	import Cursor from '$lib/components/Cursor.svelte';
 	import Nav from '$lib/components/Nav.svelte';
 	import Preloader from '$lib/components/Preloader.svelte';
 	import { cleanupMotion, initMotion, revealAll } from '$lib/motion';
@@ -36,7 +35,6 @@
 </svelte:head>
 
 <Preloader onready={handleReady} />
-<Cursor />
 <Nav />
 <main>
 	<slot />
