@@ -22,6 +22,7 @@
 		<span>© 2026 Ilhaam Ghiffari</span>
 		<span class="mid">Built with SvelteKit · Deployed via GitHub Actions</span>
 		<span>Aceh, Indonesia</span>
+		<a href="#top" class="top-link" data-cursor>↑</a>
 	</footer>
 </section>
 
@@ -36,7 +37,7 @@
 		font-weight: 400;
 		font-size: clamp(48px, 8.5vw, 128px);
 		line-height: 1.0;
-		letter-spacing: -0.015em;
+		letter-spacing: -0.025em;
 		margin-top: 26px;
 	}
 
@@ -55,7 +56,7 @@
 
 	.mail {
 		font-family: var(--font-mono);
-		font-size: clamp(14px, 1.6vw, 19px);
+		font-size: clamp(16px, 2vw, 22px);
 		letter-spacing: 0.06em;
 		padding-bottom: 8px;
 		border-bottom: 1px solid var(--line);
@@ -100,6 +101,18 @@
 		gap: 12px 28px;
 		font-size: 10px;
 		opacity: 0.55;
+	}
+	
+	.top-link {
+		font-family: var(--font-mono);
+		font-size: 14px;
+		color: var(--muted);
+		transition: color 0.3s ease;
+		text-decoration: none;
+	}
+	
+	.top-link:hover {
+		color: var(--accent);
 	}
 
 	@media (max-width: 700px) {

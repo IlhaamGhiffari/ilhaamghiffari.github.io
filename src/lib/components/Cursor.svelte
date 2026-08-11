@@ -4,7 +4,6 @@
 
 	let dot: HTMLDivElement;
 	let ring: HTMLDivElement;
-	let hovered = false;
 
 	onMount(() => {
 		if (!isFinePointer || prefersReduced) return;
@@ -23,16 +22,22 @@
 		};
 
 		const over = (e: MouseEvent) => {
-			if ((e.target as HTMLElement).closest('[data-cursor]')) {
+			const target = (e.target as HTMLElement).closest('[data-cursor]') as HTMLElement | null;
+			if (target) {
 				ring.classList.add('is-hover');
+				const rect = target.getBoundingClientRect();
+				const cx = rect.left + rect.width / 2;
+				const cy = rect.top + rect.height / 2;
+				rx += (cx - rx) * 0.15;
+				ry += (cy - ry) * 0.15;
 			} else {
 				ring.classList.remove('is-hover');
 			}
 		};
 
 		const loop = () => {
-			rx += (x - rx) * 0.16;
-			ry += (y - ry) * 0.16;
+			rx += (x - rx) * 0.12;
+			ry += (y - ry) * 0.12;
 			if (dot) dot.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
 			if (ring) ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
 			raf = requestAnimationFrame(loop);
@@ -88,6 +93,7 @@
 	.cursor-ring.is-hover {
 		width: 64px;
 		height: 64px;
-		background: rgba(255, 255, 255, 0.12);
+		background: none;
+		border-color: var(--accent);
 	}
 </style>

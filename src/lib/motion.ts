@@ -18,7 +18,7 @@ export function initMotion() {
 	gsap.registerPlugin(ScrollTrigger);
 
 	lenis = new Lenis({
-		duration: 1.15,
+		duration: 1.05,
 		smoothWheel: true,
 		touchMultiplier: 1.4
 	});
@@ -36,13 +36,27 @@ export function revealAll() {
 	if (prefersReduced) return;
 
 	gsap.utils.toArray<HTMLElement>('[data-reveal]').forEach((el) => {
-		gsap.from(el, {
-			y: 44,
-			opacity: 0,
-			duration: 1.1,
-			ease: 'power3.out',
-			scrollTrigger: { trigger: el, start: 'top 88%' }
-		});
+		const type = el.getAttribute('data-reveal');
+		if (type === 'clip') {
+			gsap.fromTo(
+				el,
+				{ clipPath: 'inset(0 0 100% 0)' },
+				{
+					clipPath: 'inset(0 0 0% 0)',
+					duration: 1.1,
+					ease: 'power4.out',
+					scrollTrigger: { trigger: el, start: 'top 88%' }
+				}
+			);
+		} else {
+			gsap.from(el, {
+				y: 20,
+				opacity: 0,
+				duration: 0.9,
+				ease: 'expo.out',
+				scrollTrigger: { trigger: el, start: 'top 88%' }
+			});
+		}
 	});
 
 	gsap.utils.toArray<HTMLElement>('[data-reveal-children]').forEach((parent) => {
@@ -50,11 +64,54 @@ export function revealAll() {
 			y: 32,
 			opacity: 0,
 			duration: 0.9,
-			ease: 'power3.out',
-			stagger: 0.08,
+			ease: 'expo.out',
+			stagger: 0.06,
 			scrollTrigger: { trigger: parent, start: 'top 85%' }
 		});
 	});
+}
+
+export function initPreloader(onComplete: () => void) {
+	if (prefersReduced) {
+		onComplete();
+		return;
+	}
+
+	const preloader = document.createElement('div');
+	preloader.className = 'preloader-line';
+	preloader.style.position = 'fixed';
+	preloader.style.top = '50%';
+	preloader.style.left = '0';
+	preloader.style.width = '100%';
+	preloader.style.height = '2px';
+	preloader.style.backgroundColor = 'var(--accent)';
+	preloader.style.transform = 'scaleX(0)';
+	preloader.style.transformOrigin = 'left';
+	preloader.style.zIndex = '999';
+
+	document.body.appendChild(preloader);
+	document.body.style.overflow = 'hidden';
+
+	const tl = gsap.timeline({
+		onComplete: () => {
+			preloader.remove();
+			document.body.style.overflow = '';
+			onComplete();
+		}
+	});
+
+	tl.to(preloader, {
+		scaleX: 1,
+		duration: 0.7,
+		ease: 'power2.inOut'
+	}).to(
+		preloader,
+		{
+			opacity: 0,
+			duration: 0.3
+		},
+		'+=0.1'
+	);
 }
 
 export function cleanupMotion() {

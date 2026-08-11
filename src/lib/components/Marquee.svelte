@@ -5,10 +5,10 @@
 <div class="marquee" aria-hidden="true">
 	<div class="marquee-track">
 		{#each marqueeItems as item}
-			<span class="item">{item} <span class="sep">✦</span></span>
+			<span class="item">{item} <span class="sep">·</span></span>
 		{/each}
 		{#each marqueeItems as item}
-			<span class="item">{item} <span class="sep">✦</span></span>
+			<span class="item">{item} <span class="sep">·</span></span>
 		{/each}
 	</div>
 </div>
@@ -21,10 +21,15 @@
 		padding: 20px 0;
 	}
 
+	.marquee:hover .marquee-track {
+		animation-play-state: paused;
+	}
+
 	.marquee-track {
 		display: flex;
 		width: max-content;
-		animation: marquee 30s linear infinite;
+		animation: marquee 40s linear infinite;
+		will-change: transform;
 	}
 
 	.item {
@@ -33,8 +38,8 @@
 		gap: 28px;
 		padding: 0 28px;
 		font-family: var(--font-mono);
-		font-size: 12px;
-		letter-spacing: 0.2em;
+		font-size: 13px;
+		letter-spacing: 0.16em;
 		text-transform: uppercase;
 		color: var(--muted);
 		white-space: nowrap;
@@ -42,7 +47,7 @@
 
 	.sep {
 		color: var(--accent);
-		font-size: 10px;
+		font-size: 14px;
 	}
 
 	@keyframes marquee {

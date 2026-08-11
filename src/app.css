@@ -3,8 +3,10 @@
 	--bg: #0a0a0b;
 	--bg-soft: #121214;
 	--ink: #eeece4;
+	--ink-dim: #c4c2b8;
 	--muted: #8b8981;
 	--line: rgba(238, 236, 228, 0.12);
+	--line-strong: rgba(238, 236, 228, 0.22);
 	--accent: #c9f24f;
 	--accent-ink: #0a0a0b;
 
@@ -28,6 +30,8 @@
 html {
 	scroll-behavior: auto;
 	background: var(--bg);
+	scrollbar-color: #1e1e22 var(--bg);
+	scrollbar-width: thin;
 }
 
 body {
@@ -35,7 +39,9 @@ body {
 	color: var(--ink);
 	font-family: var(--font-body);
 	font-size: 16px;
-	line-height: 1.6;
+	line-height: 1.55;
+	letter-spacing: -0.011em;
+	font-feature-settings: 'cv01', 'cv02';
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
@@ -72,27 +78,28 @@ button {
 
 /* thin dark scrollbar */
 ::-webkit-scrollbar {
-	width: 10px;
+	width: 6px;
 }
 ::-webkit-scrollbar-track {
 	background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-	background: #2a2a2e;
+	background: #1e1e22;
 	border-radius: 6px;
 	border: 2px solid var(--bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-	background: #3d3d42;
+	background: #2f2f34;
 }
 
 /* ============ UTILITIES ============ */
 .mono-label {
 	font-family: var(--font-mono);
-	font-size: 11px;
-	letter-spacing: 0.22em;
+	font-size: 10px;
+	letter-spacing: 0.25em;
 	text-transform: uppercase;
 	color: var(--muted);
+	font-feature-settings: 'tnum';
 }
 
 .section {
@@ -100,6 +107,13 @@ button {
 	max-width: 1520px;
 	margin: 0 auto;
 	position: relative;
+}
+
+.section-rule {
+	height: 1px;
+	background: var(--line);
+	border: 0;
+	margin: 0;
 }
 
 /* ============ CUSTOM CURSOR ============ */
@@ -139,7 +153,7 @@ html.has-cursor * {
 		animation: none !important;
 	}
 	.wi {
-		transform: none !important;
+		clip-path: none !important;
 	}
 	*,
 	*::before,
