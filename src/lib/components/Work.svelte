@@ -73,8 +73,10 @@
 		transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
-	.row:hover {
-		padding-left: 24px;
+	@media (hover: hover) {
+		.row:hover {
+			padding-left: 24px;
+		}
 	}
 
 	.idx {
@@ -111,12 +113,27 @@
 		transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
-	.row:hover .title {
-		color: var(--accent);
-	}
+	@media (hover: hover) {
+		.row:hover .title {
+			color: var(--accent);
+		}
 
-	.row:hover .title::after {
-		transform: scaleX(1);
+		.row:hover .title::after {
+			transform: scaleX(1);
+		}
+
+		.row:hover .desc {
+			color: var(--ink-dim);
+		}
+
+		.row:hover .tags {
+			opacity: 0.85;
+		}
+
+		.row:hover .arrow {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
 	}
 
 	.note {
@@ -140,18 +157,12 @@
 		transition: color 0.35s ease;
 	}
 
-	.row:hover .desc {
-		color: var(--ink-dim);
-	}
+
 
 	.tags {
 		font-size: 10.5px;
 		opacity: 0.65;
 		transition: opacity 0.35s ease;
-	}
-
-	.row:hover .tags {
-		opacity: 0.85;
 	}
 
 	.year {
@@ -165,11 +176,6 @@
 		transition:
 			transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
 			opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-	}
-
-	.row:hover .arrow {
-		transform: translate(0, 0);
-		opacity: 1;
 	}
 
 	.lock {
@@ -193,6 +199,19 @@
 		.arrow,
 		.lock {
 			display: none;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.row {
+			grid-template-columns: 1fr;
+			gap: 8px;
+		}
+		.idx {
+			display: none;
+		}
+		.year {
+			text-align: left;
 		}
 	}
 </style>

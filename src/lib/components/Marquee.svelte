@@ -21,8 +21,10 @@
 		padding: 20px 0;
 	}
 
-	.marquee:hover .marquee-track {
-		animation-play-state: paused;
+	@media (hover: hover) {
+		.marquee:hover .marquee-track {
+			animation-play-state: paused;
+		}
 	}
 
 	.marquee-track {

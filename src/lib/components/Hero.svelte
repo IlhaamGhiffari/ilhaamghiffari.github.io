@@ -94,7 +94,8 @@
 	.kicker {
 		display: flex;
 		align-items: center;
-		gap: 14px;
+		flex-wrap: wrap;
+		gap: 10px 14px;
 		margin-bottom: clamp(28px, 5vh, 56px);
 	}
 
@@ -106,7 +107,7 @@
 	.name {
 		font-family: var(--font-display);
 		font-weight: 400;
-		font-size: clamp(68px, 12vw, 172px);
+		font-size: clamp(48px, 12vw, 172px);
 		line-height: 0.94;
 		letter-spacing: -0.035em;
 	}
@@ -167,9 +168,11 @@
 			color 0.3s ease;
 	}
 
-	.cta:hover {
-		border-color: var(--accent);
-		color: var(--accent);
+	@media (hover: hover) {
+		.cta:hover {
+			border-color: var(--accent);
+			color: var(--accent);
+		}
 	}
 
 	.arw {
@@ -177,8 +180,10 @@
 		transition: transform 0.3s ease;
 	}
 
-	.cta:hover .arw {
-		transform: translateY(4px);
+	@media (hover: hover) {
+		.cta:hover .arw {
+			transform: translateY(4px);
+		}
 	}
 
 	.status {
@@ -262,6 +267,12 @@
 	@media (max-width: 640px) {
 		.coords {
 			display: none;
+		}
+		.scroll-cue {
+			bottom: 16px;
+		}
+		.scroll-cue .line {
+			height: 36px;
 		}
 	}
 </style>

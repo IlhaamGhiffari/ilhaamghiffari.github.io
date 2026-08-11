@@ -72,10 +72,14 @@
 		opacity: 0.75;
 		transition: opacity 0.25s ease;
 		position: relative;
+		padding: 10px 12px;
+		margin: -10px -12px;
 	}
 
-	.link:hover {
-		opacity: 1;
+	@media (hover: hover) {
+		.link:hover {
+			opacity: 1;
+		}
 	}
 
 	.link::after {
@@ -91,8 +95,10 @@
 		transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
-	.link:hover::after {
-		transform: scaleX(1);
+	@media (hover: hover) {
+		.link:hover::after {
+			transform: scaleX(1);
+		}
 	}
 
 	.place {

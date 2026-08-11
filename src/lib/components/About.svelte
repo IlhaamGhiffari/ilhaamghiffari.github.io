@@ -115,8 +115,10 @@
 		transition: color 0.25s ease;
 	}
 	
-	.fact:hover {
-		color: var(--ink);
+	@media (hover: hover) {
+		.fact:hover {
+			color: var(--ink);
+		}
 	}
 
 	.skills {
@@ -137,9 +139,11 @@
 			background 0.25s ease;
 	}
 
-	.chip:hover {
-		border-color: var(--accent);
-		color: var(--accent);
+	@media (hover: hover) {
+		.chip:hover {
+			border-color: var(--accent);
+			color: var(--accent);
+		}
 	}
 
 	.timeline {

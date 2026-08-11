@@ -15,7 +15,7 @@
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
 
 	--gutter: clamp(20px, 4vw, 56px);
-	--section-y: clamp(88px, 13vh, 176px);
+	--section-y: clamp(64px, 13vh, 176px);
 }
 
 /* ============ RESET ============ */

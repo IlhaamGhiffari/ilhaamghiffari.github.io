@@ -65,9 +65,11 @@
 			color 0.3s ease;
 	}
 
-	.mail:hover {
-		border-color: var(--accent);
-		color: var(--accent);
+	@media (hover: hover) {
+		.mail:hover {
+			border-color: var(--accent);
+			color: var(--accent);
+		}
 	}
 
 	.arw {
@@ -75,8 +77,10 @@
 		transition: transform 0.3s ease;
 	}
 
-	.mail:hover .arw {
-		transform: translate(3px, -3px);
+	@media (hover: hover) {
+		.mail:hover .arw {
+			transform: translate(3px, -3px);
+		}
 	}
 
 	.gh {
@@ -87,8 +91,10 @@
 		transition: color 0.3s ease;
 	}
 
-	.gh:hover {
-		color: var(--ink);
+	@media (hover: hover) {
+		.gh:hover {
+			color: var(--ink);
+		}
 	}
 
 	.foot {
@@ -111,8 +117,10 @@
 		text-decoration: none;
 	}
 	
-	.top-link:hover {
-		color: var(--accent);
+	@media (hover: hover) {
+		.top-link:hover {
+			color: var(--accent);
+		}
 	}
 
 	@media (max-width: 700px) {
