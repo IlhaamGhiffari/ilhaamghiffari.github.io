@@ -18,7 +18,7 @@ export const posts: Post[] = [
 		sections: [
 			{
 				heading: 'Why build a real platform',
-				body: 'Anyone can follow a tutorial and deploy a hello-world to Kubernetes. I wanted something different: a platform that is actually live, actually automated, and actually observable — so that every claim on my portfolio can be checked by anyone. Golden Path runs at ilhaamghiffari.tech, deployed entirely through CI/CD and GitOps.'
+				body: 'Anyone can follow a tutorial and deploy a hello-world to Kubernetes. I wanted something different: a platform that is actually automated and actually observable — so that every claim on my portfolio can be checked by anyone. Golden Path runs on Azure AKS, deployed entirely through CI/CD and GitOps. The cluster runs on demand: started for demos, stopped afterwards — a deliberate trade-off that keeps the bill near zero on a student budget.'
 			},
 			{
 				heading: 'The stack, end to end',
@@ -30,7 +30,7 @@ export const posts: Post[] = [
 			},
 			{
 				heading: 'Everything as code',
-				body: 'Infrastructure, deployment manifests, and configuration all live in Git. A change flows: commit → pipeline → registry → ArgoCD sync → live. If a deploy drifts, ArgoCD brings it back. If the cluster dies, Terraform state knows how to rebuild it.'
+				body: 'Infrastructure, deployment manifests, and configuration all live in Git. A change flows: commit → pipeline → registry → ArgoCD sync → deployed. If a deploy drifts, ArgoCD brings it back. If the cluster dies, Terraform state knows how to rebuild it.'
 			},
 			{
 				heading: 'What I learned',

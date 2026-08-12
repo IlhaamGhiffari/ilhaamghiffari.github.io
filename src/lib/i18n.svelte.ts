@@ -42,7 +42,7 @@ const dict: Record<Lang, Record<string, string>> = {
 		'cs.approach': 'Approach',
 		'cs.results': 'Results',
 		'cs.stack': 'Stack',
-		'cs.visitLive': 'Visit live site ↗',
+		'cs.visitLive': 'Live demo — on request ↗',
 		'cs.repoNote': 'Repo: private — publish planned',
 		'cs.readPost': 'Read the write-up →',
 		'cs.archLabel': 'Architecture — Azure AKS + GitOps'
@@ -86,7 +86,7 @@ const dict: Record<Lang, Record<string, string>> = {
 		'cs.approach': 'Pendekatan',
 		'cs.results': 'Hasil',
 		'cs.stack': 'Teknologi',
-		'cs.visitLive': 'Kunjungi situs live ↗',
+		'cs.visitLive': 'Demo live — sesuai permintaan ↗',
 		'cs.repoNote': 'Repo: privat — rencana publish',
 		'cs.readPost': 'Baca artikel →',
 		'cs.archLabel': 'Arsitektur — Azure AKS + GitOps'

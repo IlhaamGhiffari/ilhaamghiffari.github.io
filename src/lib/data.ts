@@ -26,14 +26,14 @@ export const projects: Project[] = [
 		tags: ['Terraform', 'Kubernetes', 'ArgoCD', 'GitHub Actions', 'OIDC', 'Trivy', 'Prometheus'],
 		year: '2026',
 		slug: 'golden-path',
-		note: 'LIVE',
+		note: 'ON DEMAND',
 		caseStudy: {
 			problem:
-				'A real platform-engineering showcase — not a toy demo. The goal: a production-grade platform on a public cloud, deployed entirely through GitOps and CI/CD, with live traffic and real observability.',
+				'A real platform-engineering showcase — not a toy demo. The goal: a production-grade platform on a public cloud, deployed entirely through GitOps and CI/CD, with real observability. It runs on demand — the cluster is started for demos and stopped afterwards, keeping a student cloud budget near zero.',
 			approach:
 				'Azure infrastructure provisioned with Terraform (AKS, networking, identity). GitHub Actions builds and ships with OIDC federation — no long-lived cloud credentials. ArgoCD watches the Git repo and syncs the cluster to the declared state. Trivy scans images in the pipeline. Prometheus + Grafana collect and visualize cluster metrics.',
 			results: [
-				'Live at ilhaamghiffari.tech — phases 1–3 shipped end-to-end',
+				'Phases 1–3 shipped end-to-end on Azure AKS — live demo on request',
 				'Push to main → built, scanned, and deployed with zero manual steps',
 				'Everything as code: infrastructure, deployment, and configuration',
 				'Cloud credentials replaced by short-lived OIDC tokens'

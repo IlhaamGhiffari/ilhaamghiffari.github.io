@@ -83,7 +83,7 @@
 				<rect x="610" y="90" width="240" height="120" rx="6" fill="#0f172a" stroke="#fbbf24" stroke-width="1.5" />
 				<rect x="610" y="90" width="240" height="120" rx="6" fill="rgba(120,53,15,0.3)" />
 				<text x="625" y="114" fill="#e2e8f0" font-family="JetBrains Mono, monospace" font-size="12">Azure AKS</text>
-				<text x="625" y="136" fill="#fbbf24" font-family="JetBrains Mono, monospace" font-size="9">pod · app (live)</text>
+				<text x="625" y="136" fill="#fbbf24" font-family="JetBrains Mono, monospace" font-size="9">pod · app</text>
 				<text x="625" y="152" fill="#fbbf24" font-family="JetBrains Mono, monospace" font-size="9">service · ingress</text>
 				<text x="625" y="176" fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="8">Kubernetes cluster</text>
 
