@@ -44,8 +44,8 @@
 			<span class="w"><span class="wi">Ilhaam</span></span>
 		</span>
 		<span class="line">
-			<span class="w"
-				><span class="wi">Ghiffari<span class="accent-dot">·</span></span></span>
+			<span class="w"><span class="wi">Ghiffari</span></span
+			><span class="accent-dot" data-hero-fade>·</span>
 		</span>
 	</h1>
 
