@@ -111,14 +111,15 @@ export const skills = [
 
 export const credentials: { name: string; issuer: string; year: string }[] = [
 	{ name: 'Machine Learning Cohort', issuer: 'Bangkit Academy', year: '2024' },
-	{ name: 'Introduction to DevOps', issuer: 'IBM', year: '2026' },
-	{ name: 'Introduction to Cloud Computing', issuer: 'IBM', year: '2026' },
-	{ name: 'Getting Started with Git and GitHub', issuer: 'IBM', year: '2026' },
-	{ name: 'Continuous Integration & Continuous Delivery (CI/CD)', issuer: 'IBM', year: '2026' },
-	{ name: 'Foundations: Data, Data, Everywhere', issuer: 'Google', year: '2024' },
-	{ name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI', year: '2024' },
-	{ name: 'Mathematics for Machine Learning & Data Science', issuer: 'DeepLearning.AI', year: '2024' },
-	{ name: 'TensorFlow Developer Specialization', issuer: 'DeepLearning.AI', year: '2024' }
+	{ name: 'DevOps, Cloud, and Agile Foundations', issuer: 'IBM', year: '2026' },
+	{ name: 'TensorFlow Developer Professional Certificate', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'Mathematics for Machine Learning and Data Science', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'TensorFlow: Advanced Techniques', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'TensorFlow: Data and Deployment', issuer: 'DeepLearning.AI', year: '2024' },
+	{ name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI · Stanford Online', year: '2024' },
+	{ name: 'Crash Course on Python', issuer: 'Google', year: '2024' },
+	{ name: 'Using Python to Interact with the Operating System', issuer: 'Google', year: '2024' },
+	{ name: 'Introduction to Git and GitHub', issuer: 'Google', year: '2024' }
 ];
 
 export const timeline: { when: string; what: string; where?: string }[] = [

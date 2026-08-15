@@ -22,7 +22,7 @@
 	<meta property="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
 	<meta
 		property="og:description"
-		content="Cloud infrastructure, IaC, Kubernetes and CI/CD — deployed via GitHub Actions to GitHub Pages."
+		content="Cloud infrastructure, IaC, Kubernetes and CI/CD."
 	/>
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://ilhaamghiffari.codes/" />

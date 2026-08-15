@@ -27,6 +27,7 @@ Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a person
 ## Highlights
 
 - **Editorial dark design** — Instrument Serif display type, mono accents, film-grain texture
+- **Alive background** — blueprint grid drawn on Canvas with scroll-parallax drift
 - **Motion-forward** — split-text hero reveal, scroll-triggered animations (GSAP ScrollTrigger), smooth scrolling (Lenis), custom cursor
 - **Accessibility-minded** — semantic HTML, `prefers-reduced-motion` fully respected, keyboard-focus states
 - **Fully static** — prerendered output, no server required, fast on Pages
@@ -39,6 +40,7 @@ Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a person
 | Framework | [SvelteKit](https://svelte.dev) 5 · `@sveltejs/adapter-static` |
 | Language | [TypeScript](https://www.typescriptlang.org) |
 | Animation | [GSAP](https://gsap.com) (ScrollTrigger) · [Lenis](https://lenis.darkroom.engineering) |
+| Background | Canvas 2D — blueprint grid + scroll parallax |
 | Fonts | Instrument Serif · Inter · JetBrains Mono (Google Fonts) |
 | Hosting | [GitHub Pages](https://pages.github.com) |
 | CI/CD | GitHub Actions (`deploy.yml`) |
@@ -51,8 +53,11 @@ Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a person
 ├── src/
 │   ├── app.css                    # design tokens, reset, utilities
 │   ├── lib/
-│   │   ├── components/            # Hero, Work, About, Contact, Nav, Cursor, Marquee
-│   │   ├── data.ts                # content: projects, skills, timeline
+│   │   ├── components/            # Background (Canvas grid), Hero, Work, About, Contact,
+│   │   │                          # Nav, Preloader, Terminal, Cursor, Marquee
+│   │   ├── data.ts                # content: projects, skills, credentials, timeline
+│   │   ├── posts.ts               # blog posts
+│   │   ├── i18n.svelte.ts         # EN/ID translations
 │   │   └── motion.ts              # Lenis + GSAP/ScrollTrigger wiring
 │   └── routes/                    # +layout.svelte, +page.svelte (prerendered)
 │       ├── work/[slug]/           # project case studies
