@@ -33,7 +33,6 @@
 	<footer class="foot mono-label">
 		<span>© 2026 Ilhaam Ghiffari</span>
 		<span class="mid">{t('contact.foot2')}</span>
-		<span>Aceh, Indonesia</span>
 		<a href="#top" class="top-link" data-cursor>↑</a>
 	</footer>
 </section>

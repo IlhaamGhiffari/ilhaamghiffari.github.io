@@ -64,7 +64,7 @@
 	</div>
 
 	<div class="coords mono-label" aria-hidden="true" data-hero-fade>
-		5.62°N 95.32°E — ACEH, INDONESIA
+		REMOTE-FIRST · CLOUD-NATIVE
 	</div>
 
 	<div class="scroll-cue mono-label" aria-hidden="true" data-hero-fade>

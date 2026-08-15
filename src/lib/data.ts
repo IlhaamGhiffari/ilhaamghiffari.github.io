@@ -53,14 +53,6 @@ export const projects: Project[] = [
 	},
 	{
 		index: '02',
-		title: 'Debit Andalan · Krueng Aceh',
-		desc: 'F.J. Mock modeling support for a civil engineering study — Q95 debit andalan for the Indrapuri sub-DAS from NASA POWER climatology (FAO-56 ETo, rainfall series), validated against reference examples.',
-		tags: ['Hydrology', 'F.J. Mock', 'FAO-56', 'ETo', 'Python'],
-		year: '2025–26',
-		note: 'COLLABORATION'
-	},
-	{
-		index: '03',
 		title: 'Aceh Resilience Monitor',
 		desc: 'Top 20 — Datathon AI Impact Challenge 2026 (Microsoft Elevate × Dicoding). Food-price forecasting on PIHPS data with Prophet, MAPE 12.38%.',
 		tags: ['Prophet', 'Forecasting', 'Datathon', 'Python'],
@@ -69,7 +61,7 @@ export const projects: Project[] = [
 		external: true
 	},
 	{
-		index: '04',
+		index: '03',
 		title: 'DermaScan',
 		desc: 'Bangkit 2024 ML capstone — machine-learning based skin-disease screening application (Dermascan-C241-PS084).',
 		tags: ['Machine Learning', 'TensorFlow', 'Bangkit'],
@@ -94,7 +86,6 @@ export const marqueeItems = [
 ];
 
 export const facts: [string, string][] = [
-	['LOCATION', 'Aceh, Indonesia'],
 	['EDUCATION', 'S.Kom Informatics — Universitas Syiah Kuala'],
 	['GPA', '3.77 / 4.00'],
 	['STATUS', 'Open for internship — DevOps / Infra / Product Security'],

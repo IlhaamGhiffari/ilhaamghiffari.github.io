@@ -1,6 +1,6 @@
 # Ilhaam Ghiffari
 
-**Platform engineer** building cloud infrastructure, automation, and developer tooling — with a side track in data/hydrology engineering.
+**Platform engineer** building cloud infrastructure, automation, and developer tooling.
 
 [![Live](https://img.shields.io/website?up_message=live&down_message=offline&label=ilhaamghiffari.codes&url=https%3A%2F%2Filhaamghiffari.codes&color=0a0a0b)](https://ilhaamghiffari.codes)
 [![CI](https://github.com/IlhaamGhiffari/ilhaamghiffari.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/IlhaamGhiffari/ilhaamghiffari.github.io/actions/workflows/deploy.yml)
@@ -8,7 +8,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/license-MIT-0a0a0b?logo=open-source-initiative&logoColor=white)](LICENSE)
 
-Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a personal portfolio focused on **platform engineering** (cloud, IaC, Kubernetes, CI/CD) and **water-resources engineering** (debit andalan, F.J. Mock, ETo). Built with SvelteKit, animated with GSAP + Lenis, deployed to GitHub Pages via GitHub Actions.
+Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a personal portfolio focused on **platform engineering** (cloud, IaC, Kubernetes, CI/CD). Built with SvelteKit, animated with GSAP + Lenis, deployed to GitHub Pages via GitHub Actions.
 
 ![Hero section](static/preview/hero.png)
 

@@ -48,7 +48,6 @@
 			>ID</button
 			>
 		</div>
-		<div class="place mono-label">Aceh, ID</div>
 	</div>
 </header>
 
@@ -125,11 +124,6 @@
 		}
 	}
 
-	.place {
-		color: var(--ink-dim);
-		opacity: 0.8;
-	}
-
 	.right {
 		display: flex;
 		align-items: center;
@@ -167,9 +161,6 @@
 	}
 
 	@media (max-width: 640px) {
-		.place {
-			display: none;
-		}
 		.nav {
 			padding-top: 14px;
 			padding-bottom: 14px;
