@@ -106,4 +106,4 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-© 2026 Muhaammad Ilhaam Ghiffari · [ilhaamghiffari.codes](https://ilhaamghiffari.codes)
+© 2026 Muhammad Ilhaam Ghiffari · [ilhaamghiffari.codes](https://ilhaamghiffari.codes)

@@ -39,7 +39,7 @@
 		{
 			"@context": "https://schema.org",
 			"@type": "Person",
-			"name": "Muhaammad Ilhaam Ghiffari",
+			"name": "Muhammad Ilhaam Ghiffari",
 			"url": "https://ilhaamghiffari.codes",
 			"jobTitle": "Platform Engineer",
 			"email": "mailto:ghiffariilhaam@gmail.com",
