@@ -8,9 +8,14 @@
 	let booted = $state(false);
 	let inputEl: HTMLInputElement;
 
-	onMount(() => boot());
+	onMount(() => {
+		const timer = boot();
+		return () => {
+			if (timer) clearInterval(timer);
+		};
+	});
 
-	const boot = () => {
+	const boot = (): number | undefined => {
 		if (booted) return;
 		booted = true;
 		const intro = [
@@ -29,6 +34,7 @@
 				clearInterval(timer);
 			}
 		}, 200);
+		return timer;
 	};
 
 	const run = (cmd: string) => {
@@ -95,7 +101,7 @@
 		<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
 		<span class="mono-label">ilhaam@portfolio: ~</span>
 	</div>
-	<div class="body" data-lenis-prevent>
+	<div class="body" data-lenis-prevent aria-live="polite">
 		{#each lines as l}
 			<p class={l.startsWith('$') ? 'cmd' : ''}>{l}</p>
 		{/each}

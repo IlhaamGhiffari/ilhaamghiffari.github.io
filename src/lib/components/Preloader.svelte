@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { initPreloader } from '$lib/motion';
 
-	export let onready: () => void = () => {};
+	let { onready = () => {} }: { onready?: () => void } = $props();
 
 	onMount(() => {
 		initPreloader(onready);

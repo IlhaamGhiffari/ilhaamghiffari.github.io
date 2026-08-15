@@ -10,7 +10,7 @@
 		{ key: 'nav.resume', href: '/resume.pdf' }
 	];
 
-	let scrolled = false;
+	let scrolled = $state(false);
 
 	onMount(() => {
 		const handleScroll = () => {

@@ -44,11 +44,11 @@
 			</div>
 
 			<div class="timeline" data-reveal>
-				{#each timeline as t}
+				{#each timeline as item}
 					<div class="tl-row">
-						<span class="when mono-label">{t.when}</span>
-						<span class="what">{t.what}</span>
-						<span class="where mono-label">{t.where}</span>
+						<span class="when mono-label">{item.when}</span>
+						<span class="what">{item.what}</span>
+						<span class="where mono-label">{item.where}</span>
 					</div>
 				{/each}
 			</div>

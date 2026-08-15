@@ -14,7 +14,7 @@
 </svelte:head>
 
 <section class="section post-page">
-	<a class="back mono-label" href="/#work" data-cursor>← Work</a>
+	<a class="back mono-label" href="/blog" data-cursor>← Blog</a>
 
 	<header class="head">
 		<h1 class="title">{post.title}</h1>
