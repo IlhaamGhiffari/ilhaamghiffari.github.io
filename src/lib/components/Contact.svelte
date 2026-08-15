@@ -39,7 +39,11 @@
 <style>
 	.contact {
 		padding-top: calc(var(--section-y) * 1.4);
-		padding-bottom: calc(var(--section-y) * 0.9);
+		/* extra bottom room: lets the #contact anchor land flush on short
+		   viewports (last section on the page) + safe-area for iOS */
+		padding-bottom: calc(
+			var(--section-y) * 0.9 + clamp(96px, 12vh, 200px) + env(safe-area-inset-bottom, 0px)
+		);
 	}
 
 	.cta {
