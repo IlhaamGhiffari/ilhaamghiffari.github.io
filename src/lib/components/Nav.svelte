@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { page } from '$app/state';
 	import { lang, setLang, t } from '$lib/i18n.svelte';
 
 	const links = [
@@ -9,6 +10,12 @@
 		{ key: 'nav.contact', href: '#contact' },
 		{ key: 'nav.resume', href: '/resume.pdf' }
 	];
+
+	// Section anchors only exist on the home page. From any other page the
+	// link must navigate home first: '#work' on '/', '/#work' elsewhere.
+	const isHome = $derived(page.url.pathname === '/');
+	const linkHref = (href: string) =>
+		href.startsWith('/') || isHome ? href : `/${href}`;
 
 	let scrolled = $state(false);
 	let menuOpen = $state(false);
@@ -84,7 +91,7 @@
 	>
 	<nav class="links" aria-label="Primary">
 		{#each links as l}
-			<a class="link mono-label" href={l.href} data-cursor>{t(l.key)}</a>
+			<a class="link mono-label" href={linkHref(l.href)} data-cursor>{t(l.key)}</a>
 		{/each}
 	</nav>
 	<div class="right">
@@ -131,7 +138,7 @@
 >
 	<nav class="mm-links" aria-label="Mobile">
 		{#each links as l, i}
-			<a class="mm-link" href={l.href} onclick={closeMenu} style={`--i:${i}`}>
+			<a class="mm-link" href={linkHref(l.href)} onclick={closeMenu} style={`--i:${i}`}>
 				<span class="mm-idx mono-label">0{i + 1}</span>
 				<span class="mm-label">{t(l.key)}</span>
 			</a>
@@ -140,7 +147,7 @@
 
 	<div class="mm-foot mono-label">
 		<span>© 2026 Ilhaam Ghiffari</span>
-		<a href="#top" onclick={closeMenu}>↑ top</a>
+		<a href={linkHref('#top')} onclick={closeMenu}>↑ top</a>
 	</div>
 </div>
 
