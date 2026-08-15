@@ -21,7 +21,6 @@ Source code of [ilhaamghiffari.codes](https://ilhaamghiffari.codes) — a person
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [CI/CD](#cicd)
-- [Custom Domain](#custom-domain)
 - [Contact](#contact)
 - [License](#license)
 
@@ -87,21 +86,7 @@ npm run preview   # serve the production build locally
 2. `npm ci` → `npm run build` (prerendered static output)
 3. `upload-pages-artifact` → `deploy-pages` (Pages source: **GitHub Actions**)
 
-No manual deploy steps — push and it ships.
-
-## Custom Domain
-
-`ilhaamghiffari.codes` (apex) is configured via `static/CNAME`. DNS at the registrar:
-
-```
-A     @    → 185.199.108.153
-A     @    → 185.199.109.153
-A     @    → 185.199.110.153
-A     @    → 185.199.111.153
-CNAME www  → ilhaamghiffari.github.io
-```
-
-TLS is auto-provisioned by GitHub (Let's Encrypt); `www` ↔ apex redirect is automatic.
+No manual deploy steps — push and it ships. The site is served at `ilhaamghiffari.codes` via the custom domain configured in [`static/CNAME`](static/CNAME) (TLS auto-provisioned by GitHub).
 
 ## Contact
 
