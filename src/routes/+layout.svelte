@@ -4,6 +4,7 @@
 	import Nav from '$lib/components/Nav.svelte';
 	import Preloader from '$lib/components/Preloader.svelte';
 	import Cursor from '$lib/components/Cursor.svelte';
+	import Background from '$lib/components/Background.svelte';
 	import { cleanupMotion, initMotion, revealAll } from '$lib/motion';
 
 	function handleReady() {
@@ -50,6 +51,7 @@
 	</script>
 </svelte:head>
 
+<Background />
 <Preloader onready={handleReady} />
 <Nav />
 <main>
