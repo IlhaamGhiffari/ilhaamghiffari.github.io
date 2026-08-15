@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<title>Writing — Ilhaam Ghiffari</title>
+	<meta name="description" content="Field notes on platform engineering, GitOps and infrastructure." />
 	<meta property="og:title" content="Writing — Ilhaam Ghiffari" />
 	<meta
 		property="og:description"
@@ -17,7 +18,7 @@
 	<a class="back mono-label" href="/" data-cursor>{t('cs.back')}</a>
 
 	<div class="head" data-reveal>
-		<span class="mono-label">{t('blog.head1')}</span>
+		<h1 class="mono-label">{t('blog.head1')}</h1>
 		<span class="mono-label">2026</span>
 	</div>
 
@@ -58,6 +59,10 @@
 		justify-content: space-between;
 		align-items: baseline;
 		margin-bottom: 24px;
+	}
+
+	.head h1 {
+		font-weight: inherit;
 	}
 
 	.rows {

@@ -95,6 +95,9 @@ export function t(key: string): string {
 
 export function setLang(l: Lang) {
 	lang.value = l;
+	if (typeof document !== 'undefined') {
+		document.documentElement.lang = l;
+	}
 	try {
 		localStorage.setItem('lang', l);
 	} catch {

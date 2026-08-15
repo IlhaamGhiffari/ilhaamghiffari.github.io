@@ -32,7 +32,7 @@
 
 	<footer class="foot mono-label">
 		<span>© 2026 Ilhaam Ghiffari</span>
-		<a href="#top" class="top-link" data-cursor>↑</a>
+		<a href="#top" class="top-link" data-cursor aria-label="Back to top">↑</a>
 	</footer>
 </section>
 
