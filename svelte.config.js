@@ -8,7 +8,9 @@ const config = {
 		adapter: adapter(),
 		prerender: {
 			// hash links like /#work target sections on the home page, not this page
-			handleMissingId: 'ignore'
+			handleMissingId: 'ignore',
+			// sitemap isn't linked from any page — the crawler won't discover it
+			entries: ['/', '/sitemap.xml']
 		}
 	}
 };
