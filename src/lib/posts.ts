@@ -14,11 +14,11 @@ export const posts: Post[] = [
 		date: '2026-08-12',
 		readingTime: '5 min read',
 		excerpt:
-			'How I built and shipped a production platform on Azure AKS — Terraform, GitHub Actions with OIDC, ArgoCD GitOps, Trivy, and Prometheus/Grafana — as a portfolio piece, not a demo.',
+			'How I built and shipped a production platform on Azure AKS: Terraform, GitHub Actions with OIDC, ArgoCD GitOps, Trivy, and Prometheus/Grafana, as a portfolio piece, not a demo.',
 		sections: [
 			{
 				heading: 'Why build a real platform',
-				body: 'Anyone can follow a tutorial and deploy a hello-world to Kubernetes. I wanted something different: a platform that is actually automated and actually observable — so that every claim on my portfolio can be checked by anyone. Golden Path runs on Azure AKS, deployed entirely through CI/CD and GitOps. The cluster runs on demand: started for demos, stopped afterwards — a deliberate trade-off that keeps the bill near zero on a student budget.'
+				body: 'Anyone can follow a tutorial and deploy a hello-world to Kubernetes. I wanted something different: a platform that is actually automated and actually observable, so that every claim on my portfolio can be checked by anyone. Golden Path runs on Azure AKS, deployed entirely through CI/CD and GitOps. The cluster runs on demand: started for demos, stopped afterwards, a deliberate trade-off that keeps the bill near zero on a student budget.'
 			},
 			{
 				heading: 'The stack, end to end',
@@ -26,7 +26,7 @@ export const posts: Post[] = [
 			},
 			{
 				heading: 'No long-lived cloud credentials',
-				body: 'The most security-relevant decision: GitHub Actions authenticates to Azure with OIDC federation instead of storing a service principal secret. The pipeline requests a short-lived token at deploy time. There are no cloud credentials sitting in repository secrets — which is exactly the kind of practice I want to be judged on.'
+				body: 'The most security-relevant decision: GitHub Actions authenticates to Azure with OIDC federation instead of storing a service principal secret. The pipeline requests a short-lived token at deploy time. There are no cloud credentials sitting in repository secrets, which is exactly the kind of practice I want to be judged on.'
 			},
 			{
 				heading: 'Everything as code',
@@ -34,7 +34,7 @@ export const posts: Post[] = [
 			},
 			{
 				heading: 'What I learned',
-				body: 'GitOps is not just a workflow — it changes how you debug. When something breaks in production, the first question is "what is the declared state, and where does reality differ?" — and the answer is usually visible in Git and Grafana. Also: observability pays for itself the first time you actually need it. And working within a limited Azure credit budget is a great forcing function for cost-conscious infrastructure.'
+				body: 'GitOps is not just a workflow: it changes how you debug. When something breaks in production, the first question is "what is the declared state, and where does reality differ?", and the answer is usually visible in Git and Grafana. Also: observability pays for itself the first time you actually need it. And working within a limited Azure credit budget is a great forcing function for cost-conscious infrastructure.'
 			},
 			{
 				heading: 'What is next',

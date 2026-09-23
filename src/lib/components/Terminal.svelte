@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { credentials, projects, skills } from '$lib/data';
+	import { projects, skills } from '$lib/data';
 	import { t } from '$lib/i18n.svelte';
 
 	let lines = $state<string[]>([]);
@@ -9,77 +9,49 @@
 	let inputEl: HTMLInputElement;
 
 	onMount(() => {
-		const timer = boot();
-		return () => {
-			if (timer) clearInterval(timer);
-		};
+		boot();
 	});
 
-	const boot = (): number | undefined => {
+	const boot = () => {
 		if (booted) return;
 		booted = true;
-		const intro = [
-			'$ whoami',
-			t('term.welcome1'),
-			'',
-			t('term.welcome2'),
-			t('term.welcome3')
-		];
-		let i = 0;
-		const timer = setInterval(() => {
-			if (i < intro.length) {
-				lines = [...lines, intro[i]];
-				i++;
-			} else {
-				clearInterval(timer);
-			}
-		}, 200);
-		return timer;
+		lines = ['$ whoami', t('term.welcome1'), t('term.welcome2'), t('term.welcome3')];
 	};
 
 	const run = (cmd: string) => {
-		lines = [...lines, `$ ${cmd}`];
+		lines = [...lines, `ilhaam@lab:~$ ${cmd}`];
 		switch (cmd.trim().toLowerCase()) {
 			case 'help':
 				lines = [
 					...lines,
-					t('term.helpIntro'),
-					'  whoami              about me',
-					'  ls                  list files',
-					'  cat <file>          read a file',
-					'    skills.txt        what i work with',
-					'    projects.md       selected projects',
-					'    certs.txt         certifications',
-					'    contact.txt       reach me',
-					'  repo                github profile',
-					'  clear               clear the terminal'
+					'available commands:',
+					'  whoami    who is behind this shell',
+					'  stack     the platform stack',
+					'  projects  selected projects',
+					'  status    current availability',
+					'  contact   reach me',
+					'  clear     clear the terminal'
 				];
 				break;
 			case 'whoami':
 				lines = [...lines, t('term.whoami1'), t('term.whoami2'), t('term.whoami3')];
 				break;
-			case 'ls':
-				lines = [...lines, 'about.txt  skills.txt  projects.md  certs.txt  contact.txt'];
-				break;
-			case 'cat skills.txt':
+			case 'stack':
 				lines = [...lines, skills.join('  ·  ')];
 				break;
-			case 'cat projects.md':
-				lines = [...lines, ...projects.map((p) => `- ${p.title} (${p.year})`)];
+			case 'projects':
+				lines = [...lines, ...projects.map((p) => `- ${p.title} (${p.year}) — ${p.tags.slice(0, 3).join(' · ')}`)];
 				break;
-			case 'cat certs.txt':
-				lines = [...lines, ...credentials.map((c) => `- ${c.name} — ${c.issuer} (${c.year})`)];
+			case 'status':
+				lines = [...lines, t('term.whoami3')];
 				break;
-			case 'cat contact.txt':
+			case 'contact':
 				lines = [
 					...lines,
 					'email:    ghiffariilhaam@gmail.com',
 					'github:   github.com/IlhaamGhiffari',
 					'linkedin: linkedin.com/in/ilhaam-ghiffari'
 				];
-				break;
-			case 'repo':
-				lines = [...lines, 'https://github.com/IlhaamGhiffari'];
 				break;
 			case 'clear':
 				lines = [];
@@ -96,14 +68,21 @@
 	};
 </script>
 
-<div class="term" role="presentation" onclick={() => inputEl?.focus()}>
-	<div class="bar">
-		<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
-		<span class="mono-label">ilhaam@portfolio: ~</span>
-	</div>
-	<div class="body" data-lenis-prevent aria-live="polite">
+<div
+	class="term"
+	role="button"
+	tabindex="-1"
+	onclick={() => inputEl?.focus()}
+	onkeydown={(e) => {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
+			inputEl?.focus();
+		}
+	}}
+>
+	<div class="body" data-lenis-prevent>
 		{#each lines as l}
-			<p class={l.startsWith('$') ? 'cmd' : ''}>{l}</p>
+			<p class={l.startsWith('$') || l.startsWith('ilhaam@') ? 'cmd' : ''}>{l}</p>
 		{/each}
 		<form
 			onsubmit={(e) => {
@@ -111,7 +90,7 @@
 				submit();
 			}}
 		>
-			<span class="prompt">$</span>
+			<span class="prompt">ilhaam@lab:~$</span>
 			<input
 				bind:this={inputEl}
 				bind:value={input}
@@ -127,53 +106,17 @@
 <style>
 	.term {
 		border: 1px solid var(--line);
-		border-radius: 10px;
-		background: rgba(12, 12, 14, 0.75);
-		backdrop-filter: blur(8px);
-		-webkit-backdrop-filter: blur(8px);
+		background: var(--bg-soft);
 		overflow: hidden;
 		font-family: var(--font-mono);
 	}
 
-	.bar {
-		display: flex;
-		align-items: center;
-		gap: 14px;
-		padding: 12px 16px;
-		border-bottom: 1px solid var(--line);
-	}
-
-	.dots {
-		display: flex;
-		gap: 6px;
-	}
-
-	.dots i {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		background: #2a2a2e;
-	}
-
-	.dots i:nth-child(1) {
-		background: #ff5f56;
-		opacity: 0.7;
-	}
-	.dots i:nth-child(2) {
-		background: #ffbd2e;
-		opacity: 0.7;
-	}
-	.dots i:nth-child(3) {
-		background: #27c93f;
-		opacity: 0.7;
-	}
-
 	.body {
-		padding: 16px;
+		padding: 20px 22px;
 		height: 320px;
 		overflow-y: auto;
 		font-size: 12px;
-		line-height: 1.75;
+		line-height: 1.8;
 	}
 
 	.body p {
@@ -188,7 +131,7 @@
 
 	.prompt {
 		color: var(--accent);
-		margin-right: 8px;
+		margin-right: 10px;
 	}
 
 	form {

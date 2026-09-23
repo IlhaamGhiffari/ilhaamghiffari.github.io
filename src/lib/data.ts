@@ -29,11 +29,11 @@ export const projects: Project[] = [
 		note: 'ON DEMAND',
 		caseStudy: {
 			problem:
-				'A real platform-engineering showcase — not a toy demo. The goal: a production-grade platform on a public cloud, deployed entirely through GitOps and CI/CD, with real observability. It runs on demand — the cluster is started for demos and stopped afterwards, keeping a student cloud budget near zero.',
+				'A real platform-engineering showcase, not a toy demo. The goal: a production-grade platform on a public cloud, deployed entirely through GitOps and CI/CD, with real observability. It runs on demand: the cluster is started for demos and stopped afterwards, keeping a student cloud budget near zero.',
 			approach:
-				'Azure infrastructure provisioned with Terraform (AKS, networking, identity). GitHub Actions builds and ships with OIDC federation — no long-lived cloud credentials. ArgoCD watches the Git repo and syncs the cluster to the declared state. Trivy scans images in the pipeline. Prometheus + Grafana collect and visualize cluster metrics.',
+				'Azure infrastructure provisioned with Terraform (AKS, networking, identity). GitHub Actions builds and ships with OIDC federation, so there are no long-lived cloud credentials. ArgoCD watches the Git repo and syncs the cluster to the declared state. Trivy scans images in the pipeline. Prometheus + Grafana collect and visualize cluster metrics.',
 			results: [
-				'Phases 1–3 shipped end-to-end on Azure AKS — live demo on request',
+				'Phases 1–3 shipped end-to-end on Azure AKS · live demo on request',
 				'Push to main → built, scanned, and deployed with zero manual steps',
 				'Everything as code: infrastructure, deployment, and configuration',
 				'Cloud credentials replaced by short-lived OIDC tokens'
@@ -71,24 +71,11 @@ export const projects: Project[] = [
 	}
 ];
 
-export const marqueeItems = [
-	'KUBERNETES',
-	'TERRAFORM',
-	'ARGOCD',
-	'CI/CD',
-	'GITOPS',
-	'DOCKER',
-	'PROMETHEUS',
-	'GRAFANA',
-	'OIDC',
-	'PYTHON',
-	'PROPHET'
-];
 
 export const facts: [string, string][] = [
-	['EDUCATION', 'S.Kom Informatics — Universitas Syiah Kuala'],
+	['EDUCATION', 'S.Kom Informatics · Universitas Syiah Kuala'],
 	['GPA', '3.77 / 4.00'],
-	['STATUS', 'Open for internship — DevOps / Infra / Product Security'],
+	['STATUS', 'Open for internship · DevOps / Infra / Product Security'],
 	['LANGUAGES', 'Indonesian (native) · English (professional)']
 ];
 
@@ -110,16 +97,14 @@ export const skills = [
 ];
 
 export const credentials: { name: string; issuer: string; year: string }[] = [
-	{ name: 'Machine Learning Cohort', issuer: 'Bangkit Academy', year: '2024' },
 	{ name: 'DevOps, Cloud, and Agile Foundations', issuer: 'IBM', year: '2026' },
+	{ name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI · Stanford Online', year: '2024' },
 	{ name: 'TensorFlow Developer Professional Certificate', issuer: 'DeepLearning.AI', year: '2024' },
 	{ name: 'Mathematics for Machine Learning and Data Science', issuer: 'DeepLearning.AI', year: '2024' },
 	{ name: 'TensorFlow: Advanced Techniques', issuer: 'DeepLearning.AI', year: '2024' },
 	{ name: 'TensorFlow: Data and Deployment', issuer: 'DeepLearning.AI', year: '2024' },
-	{ name: 'Machine Learning Specialization', issuer: 'DeepLearning.AI · Stanford Online', year: '2024' },
-	{ name: 'Crash Course on Python', issuer: 'Google', year: '2024' },
 	{ name: 'Using Python to Interact with the Operating System', issuer: 'Google', year: '2024' },
-	{ name: 'Introduction to Git and GitHub', issuer: 'Google', year: '2024' }
+	{ name: 'Machine Learning Cohort', issuer: 'Bangkit Academy', year: '2024' }
 ];
 
 export const timeline: { when: string; what: string; where?: string }[] = [

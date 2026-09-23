@@ -3,7 +3,7 @@
 </script>
 
 <section class="section contact" id="contact">
-	<span class="mono-label" data-reveal>Contact — 06</span>
+	<span class="mono-label" data-reveal>Contact · 03</span>
 	<h2 class="cta" data-reveal>
 		{t('contact.h1')}<br /><em>{t('contact.h2')}</em>
 	</h2>
@@ -71,7 +71,7 @@
 	.mail {
 		font-family: var(--font-mono);
 		font-size: clamp(16px, 2vw, 22px);
-		letter-spacing: 0.06em;
+		letter-spacing: 0;
 		padding-bottom: 8px;
 		border-bottom: 1px solid var(--line);
 		transition:
@@ -100,7 +100,7 @@
 	.gh {
 		font-family: var(--font-mono);
 		font-size: 12px;
-		letter-spacing: 0.12em;
+		letter-spacing: 0;
 		color: var(--muted);
 		transition: color 0.3s ease;
 	}

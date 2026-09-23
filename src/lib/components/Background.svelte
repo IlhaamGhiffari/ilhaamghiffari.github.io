@@ -12,9 +12,21 @@
 		const SPACING = 80; // minor grid pitch (px)
 		const MAJOR = 4; // every Nth line is a major line
 
-		const minorA = 'rgba(201, 242, 79, 0.055)';
-		const majorA = 'rgba(201, 242, 79, 0.10)';
-		const crossA = 'rgba(201, 242, 79, 0.16)';
+		// Grid tint follows the theme via --grid-rgb (accent in dark, ink in light).
+		const readTint = () =>
+			getComputedStyle(document.documentElement).getPropertyValue('--grid-rgb').trim() || '201, 242, 79';
+		let tint = readTint();
+		let minorA = `rgba(${tint}, 0.055)`;
+		let majorA = `rgba(${tint}, 0.10)`;
+		let crossA = `rgba(${tint}, 0.16)`;
+
+		const refreshTint = () => {
+			tint = readTint();
+			minorA = `rgba(${tint}, 0.055)`;
+			majorA = `rgba(${tint}, 0.10)`;
+			crossA = `rgba(${tint}, 0.16)`;
+			dirty = true;
+		};
 
 		let dpr = 1;
 		let w = 0;
@@ -81,6 +93,15 @@
 			scrollT = window.scrollY;
 			dirty = true;
 		};
+		// Redraw with the new tint when the theme class flips on <html>.
+		const themeObserver =
+			typeof MutationObserver !== 'undefined'
+				? new MutationObserver(refreshTint)
+				: null;
+		themeObserver?.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class']
+		});
 		const onResize = () => {
 			resize();
 			dirty = true;
@@ -99,7 +120,10 @@
 		if (prefersReduced) {
 			draw(); // static grid, no motion
 			window.addEventListener('resize', onResize);
-			return () => window.removeEventListener('resize', onResize);
+			return () => {
+				window.removeEventListener('resize', onResize);
+				themeObserver?.disconnect();
+			};
 		}
 
 		window.addEventListener('scroll', onScroll, { passive: true });
@@ -110,6 +134,7 @@
 			cancelAnimationFrame(raf);
 			window.removeEventListener('scroll', onScroll);
 			window.removeEventListener('resize', onResize);
+			themeObserver?.disconnect();
 		};
 	}
 
@@ -122,7 +147,6 @@
 	<canvas class="grid-canvas" bind:this={canvas}></canvas>
 	<div class="vignette"></div>
 	<span class="tag t1 mono-label">GITOPS — SYNCED</span>
-	<span class="tag t2 mono-label">INFRA-AS-CODE</span>
 	<span class="tag t3 mono-label">SVELTEKIT · STATIC</span>
 </div>
 
@@ -150,26 +174,22 @@
 		background: radial-gradient(
 			ellipse at 50% 38%,
 			transparent 60%,
-			rgba(0, 0, 0, 0.3) 100%
+			var(--vignette) 100%
 		);
 	}
 
 	/* ---------- mono corner labels ---------- */
 	.tag {
 		position: absolute;
-		font-size: 9px;
-		letter-spacing: 0.16em;
-		color: rgba(201, 242, 79, 0.45);
+		font-size: 11px;
+		letter-spacing: 0;
+		color: rgb(var(--grid-rgb) / 0.7);
 		user-select: none;
 	}
 
 	.t1 {
 		top: 88px;
 		right: var(--gutter);
-	}
-	.t2 {
-		top: 46%;
-		left: var(--gutter);
 	}
 	.t3 {
 		right: var(--gutter);

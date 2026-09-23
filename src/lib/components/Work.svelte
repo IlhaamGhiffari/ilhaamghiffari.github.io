@@ -76,6 +76,7 @@
 
 	.rows {
 		border-bottom: 1px solid var(--line);
+		padding-bottom: 12px;
 	}
 
 	.row {
@@ -85,12 +86,12 @@
 		align-items: center;
 		padding: clamp(28px, 4.5vh, 48px) 14px;
 		border-top: 1px solid var(--line);
-		transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
 	@media (hover: hover) {
 		.row:hover {
-			padding-left: 24px;
+			transform: translateX(10px);
 		}
 	}
 
@@ -156,17 +157,17 @@
 		vertical-align: middle;
 		margin-left: 14px;
 		font-family: var(--font-mono);
-		font-size: 10px;
-		letter-spacing: 0.18em;
+		font-size: 12px;
+		letter-spacing: 0;
 		border: 1px solid currentColor;
-		border-radius: 999px;
+		border-radius: 0;
 		padding: 4px 10px;
 		opacity: 0.75;
 	}
 
 	.desc {
 		max-width: 560px;
-		font-size: 14.5px;
+		font-size: 14px;
 		line-height: 1.65;
 		color: var(--muted);
 		transition: color 0.35s ease;
@@ -175,14 +176,14 @@
 
 
 	.tags {
-		font-size: 10.5px;
+		font-size: 11px;
 		opacity: 0.65;
 		transition: opacity 0.35s ease;
+		font-family: var(--font-mono);
+		text-transform: lowercase;
+		letter-spacing: 0;
 	}
 
-	.year {
-		opacity: 0.85;
-	}
 
 	.arrow {
 		font-size: 26px;

@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/state';
 	import { lang, setLang, t } from '$lib/i18n.svelte';
+	import { theme, toggleTheme } from '$lib/theme.svelte';
 
 	const links = [
 		{ key: 'nav.work', href: '#work' },
@@ -19,6 +20,7 @@
 
 	let scrolled = $state(false);
 	let menuOpen = $state(false);
+	let activeSection = $state('');
 	let menuEl: HTMLElement;
 	let burgerEl: HTMLButtonElement;
 
@@ -37,8 +39,26 @@
 			scrolled = window.scrollY > 60;
 		};
 		window.addEventListener('scroll', handleScroll, { passive: true });
+
+		const ids = ['work', 'about', 'contact'];
+		const sections = ids
+			.map((id) => document.getElementById(id))
+			.filter((el): el is HTMLElement => el !== null);
+		const io = sections.length
+			? new IntersectionObserver(
+					(entries) => {
+						for (const entry of entries) {
+							if (entry.isIntersecting) activeSection = entry.target.id;
+						}
+					},
+					{ rootMargin: '-45% 0px -50% 0px' }
+				)
+			: null;
+		sections.forEach((s) => io?.observe(s));
+
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
+			io?.disconnect();
 			unlockScroll();
 		};
 	});
@@ -91,7 +111,12 @@
 	>
 	<nav class="links" aria-label="Primary">
 		{#each links as l}
-			<a class="link mono-label" href={linkHref(l.href)} data-cursor>{t(l.key)}</a>
+			<a
+				class="link mono-label"
+				class:active={l.href.startsWith('#') && activeSection === l.href.slice(1)}
+				href={linkHref(l.href)}
+				data-cursor
+			>{t(l.key)}</a>
 		{/each}
 	</nav>
 	<div class="right">
@@ -112,6 +137,34 @@
 			>ID</button
 			>
 		</div>
+		<button
+			class="theme-btn"
+			onclick={toggleTheme}
+			aria-label={t('nav.theme')}
+			title={t('nav.theme')}
+			data-cursor
+		>
+			{#if theme.value === 'dark'}
+				<!-- sun -->
+				<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+					<circle cx="8" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.3" />
+					<g stroke="currentColor" stroke-width="1.3" stroke-linecap="round">
+						<path d="M8 1.2v1.6M8 13.2v1.6M1.2 8h1.6M13.2 8h1.6M3.2 3.2l1.1 1.1M11.7 11.7l1.1 1.1M12.8 3.2l-1.1 1.1M4.3 11.7l-1.1 1.1" />
+					</g>
+				</svg>
+			{:else}
+				<!-- moon -->
+				<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+					<path
+						d="M13.5 9.8A5.8 5.8 0 0 1 6.2 2.5a5.8 5.8 0 1 0 7.3 7.3Z"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="1.3"
+						stroke-linejoin="round"
+					/>
+				</svg>
+			{/if}
+		</button>
 		<button
 			class="burger"
 			class:open={menuOpen}
@@ -166,7 +219,7 @@
 	}
 
 	.nav.scrolled {
-		background: rgba(10, 10, 11, 0.7);
+		background: color-mix(in srgb, var(--bg) 70%, transparent);
 		backdrop-filter: blur(12px);
 		-webkit-backdrop-filter: blur(12px);
 	}
@@ -197,6 +250,11 @@
 		position: relative;
 		padding: 10px 12px;
 		margin: -10px -12px;
+	}
+
+	.link.active {
+		color: var(--accent);
+		opacity: 1;
 	}
 
 	@media (hover: hover) {
@@ -234,7 +292,7 @@
 		display: flex;
 		align-items: center;
 		gap: 6px;
-		font-size: 10px;
+		font-size: 11px;
 		letter-spacing: 0.14em;
 		color: var(--muted);
 	}
@@ -258,6 +316,24 @@
 
 	.sep {
 		opacity: 0.4;
+	}
+
+	.theme-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+		color: var(--ink-dim);
+		opacity: 0.75;
+		transition:
+			opacity 0.2s ease,
+			color 0.2s ease;
+	}
+
+	.theme-btn:hover {
+		opacity: 1;
+		color: var(--accent);
 	}
 
 	/* ---------- hamburger ---------- */
@@ -298,7 +374,7 @@
 		justify-content: center;
 		gap: clamp(32px, 8vh, 64px);
 		padding: 96px var(--gutter) 40px;
-		background: rgba(10, 10, 11, 0.96);
+		background: color-mix(in srgb, var(--bg) 96%, transparent);
 		backdrop-filter: blur(18px);
 		-webkit-backdrop-filter: blur(18px);
 		/* closed state = transparent + inert (blocks tab/AT). No
@@ -382,8 +458,11 @@
 			padding-bottom: 14px;
 		}
 		.brand {
-			font-size: 9px;
+			font-size: 11px;
 			letter-spacing: 0.02em;
+		}
+		.brand .accent {
+			display: none;
 		}
 		.links {
 			display: none;
@@ -393,6 +472,17 @@
 		}
 		.right {
 			gap: 12px;
+		}
+		.lang-btn {
+			min-height: 44px;
+			padding: 0 10px;
+			display: flex;
+			align-items: center;
+		}
+		.burger {
+			width: 44px;
+			height: 44px;
+			margin-right: -12px;
 		}
 	}
 

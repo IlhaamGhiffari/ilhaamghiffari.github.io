@@ -83,7 +83,7 @@
 			ry += (ty - ry) * k;
 			if (dot) dot.style.transform = `translate3d(${px}px, ${py}px, 0) translate(-50%, -50%)`;
 			if (ring) {
-				const s = pressed ? 0.82 : 1;
+				const s = pressed ? 0.82 : hoverEl ? 1.55 : 1;
 				ring.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%) scale(${s})`;
 			}
 			raf = requestAnimationFrame(loop);
@@ -141,8 +141,6 @@
 		border: 1px solid rgba(255, 255, 255, 0.7);
 		transition:
 			opacity 0.25s ease,
-			width 0.25s ease,
-			height 0.25s ease,
 			background 0.25s ease,
 			border-color 0.25s ease;
 	}
@@ -153,8 +151,6 @@
 	}
 
 	.cursor-ring:global(.is-hover) {
-		width: 56px;
-		height: 56px;
 		background: rgba(255, 255, 255, 0.08);
 		border-color: var(--accent);
 	}

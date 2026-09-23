@@ -6,8 +6,8 @@
 </script>
 
 <svelte:head>
-	<title>{post.title} — Ilhaam Ghiffari</title>
-	<meta property="og:title" content={`${post.title} — Ilhaam Ghiffari`} />
+	<title>{post.title} · Ilhaam Ghiffari</title>
+	<meta property="og:title" content={`${post.title} · Ilhaam Ghiffari`} />
 	<meta property="og:description" content={post.excerpt} />
 	<meta property="og:url" content={`https://ilhaamghiffari.codes/blog/${post.slug}`} />
 	<meta name="description" content={post.excerpt} />
@@ -18,7 +18,7 @@
 
 	<header class="head">
 		<h1 class="title">{post.title}</h1>
-		<div class="meta mono-label">
+		<div class="meta">
 			<span>{post.date}</span>
 			<span>·</span>
 			<span>{post.readingTime}</span>
@@ -35,8 +35,8 @@
 		{/each}
 	</article>
 
-	<footer class="end mono-label">
-		<span>Ilhaam Ghiffari — ilhaamghiffari.codes</span>
+	<footer class="end">
+		<span>Ilhaam Ghiffari · ilhaamghiffari.codes</span>
 	</footer>
 </section>
 
@@ -71,8 +71,12 @@
 		margin-top: 20px;
 		display: flex;
 		gap: 10px;
-		font-size: 10.5px;
+		font-size: 12px;
 		opacity: 0.6;
+		font-family: var(--font-mono);
+		color: var(--muted);
+		letter-spacing: 0;
+		text-transform: none;
 	}
 
 	.excerpt {
@@ -107,7 +111,9 @@
 		margin-top: clamp(48px, 8vh, 72px);
 		padding-top: 20px;
 		border-top: 1px solid var(--line);
-		font-size: 10px;
-		opacity: 0.5;
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0;
+		color: var(--muted);
 	}
 </style>

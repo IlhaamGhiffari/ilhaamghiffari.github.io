@@ -18,8 +18,8 @@
 </script>
 
 <svelte:head>
-	<title>Ilhaam Ghiffari — Platform Engineer</title>
-	<meta property="og:title" content="Ilhaam Ghiffari — Platform Engineer" />
+	<title>Ilhaam Ghiffari · Platform Engineer</title>
+	<meta property="og:title" content="Ilhaam Ghiffari · Platform Engineer" />
 	<meta
 		property="og:description"
 		content="Cloud infrastructure, IaC, Kubernetes and CI/CD."
@@ -28,7 +28,7 @@
 	<meta property="og:url" content="https://ilhaamghiffari.codes/" />
 	<meta property="og:image" content="https://ilhaamghiffari.codes/preview/hero.png" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Ilhaam Ghiffari — Platform Engineer" />
+	<meta name="twitter:title" content="Ilhaam Ghiffari · Platform Engineer" />
 	<meta
 		name="twitter:description"
 		content="Cloud infrastructure, IaC, Kubernetes and CI/CD."

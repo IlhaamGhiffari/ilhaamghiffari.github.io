@@ -18,7 +18,7 @@
 	<a class="back mono-label" href="/#work" data-cursor>{t('cs.back')}</a>
 
 	<header class="head">
-		<span class="mono-label">Project {p.index} — {p.year}</span>
+		<span class="mono-label">Project {p.index} · {p.year}</span>
 		{#if p.note}<span class="note mono-label">{p.note}</span>{/if}
 	</header>
 
@@ -29,24 +29,24 @@
 		<a class="live" href="https://ilhaamghiffari.tech" target="_blank" rel="noreferrer noopener" data-cursor>
 			{t('cs.visitLive')}
 		</a>
-		<span class="mono-label">{t('cs.repoNote')}</span>
+		<span class="repo-note">{t('cs.repoNote')}</span>
 		<a class="post" href="/blog/deploying-golden-path" data-cursor>{t('cs.readPost')}</a>
 	</div>
 
 	{#if cs}
 		<div class="grid">
 			<div class="block" data-reveal>
-				<h3 class="mono-label">{t('cs.problem')}</h3>
+				<h2 class="mono-label">{t('cs.problem')}</h2>
 				<p>{cs.problem}</p>
 			</div>
 			<div class="block" data-reveal>
-				<h3 class="mono-label">{t('cs.approach')}</h3>
+				<h2 class="mono-label">{t('cs.approach')}</h2>
 				<p>{cs.approach}</p>
 			</div>
 		</div>
 
 		<div class="diagram" data-reveal>
-			<div class="diagram-head mono-label">{t('cs.archLabel')}</div>
+			<div class="diagram-head">{t('cs.archLabel')}</div>
 			<!-- Architecture diagram: dark theme, semantic colors -->
 			<svg viewBox="0 0 920 500" role="img" aria-label="Golden Path architecture diagram">
 				<defs>
@@ -131,7 +131,7 @@
 		</div>
 
 		<div class="block results" data-reveal>
-			<h3 class="mono-label">{t('cs.results')}</h3>
+			<h2 class="mono-label">{t('cs.results')}</h2>
 			<ul>
 				{#each cs.results as r}
 					<li>{r}</li>
@@ -140,7 +140,7 @@
 		</div>
 
 		<div class="block" data-reveal>
-			<h3 class="mono-label">{t('cs.stack')}</h3>
+			<h2 class="mono-label">{t('cs.stack')}</h2>
 			<div class="chips">
 				{#each cs.stack as s}
 					<span class="chip mono-label">{s}</span>
@@ -162,6 +162,7 @@
 		display: inline-block;
 		margin-bottom: 48px;
 		color: var(--muted);
+		font-size: 12px;
 		transition: color 0.25s ease;
 	}
 
@@ -176,13 +177,24 @@
 		margin-bottom: 18px;
 	}
 
+	.head .mono-label {
+		font-size: 12px;
+	}
+
 	.note {
 		border: 1px solid var(--accent);
 		color: var(--accent);
-		border-radius: 999px;
+		border-radius: 0;
 		padding: 3px 10px;
-		font-size: 9px;
-		letter-spacing: 0.18em;
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+
+	.repo-note {
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0;
+		color: var(--muted);
 	}
 
 	.title {
@@ -246,13 +258,14 @@
 		gap: clamp(28px, 4vw, 56px);
 	}
 
-	.block h3 {
+	.block h2 {
 		margin-bottom: 14px;
 		color: var(--accent);
+		font-size: 12px;
 	}
 
 	.block p {
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 1.75;
 		color: var(--ink);
 	}
@@ -264,6 +277,10 @@
 	.diagram-head {
 		margin-bottom: 14px;
 		color: var(--muted);
+		font-family: var(--font-mono);
+		font-size: 12px;
+		letter-spacing: 0;
+		text-transform: none;
 	}
 
 	.diagram svg {
@@ -271,6 +288,12 @@
 		height: auto;
 		border-radius: 10px;
 		border: 1px solid var(--line);
+		padding: 12px;
+		box-sizing: border-box;
+	}
+
+	.diagram svg text {
+		font-size: 12px;
 	}
 
 	.results {
@@ -287,7 +310,7 @@
 	.results li {
 		padding-left: 22px;
 		position: relative;
-		font-size: 15px;
+		font-size: 16px;
 		line-height: 1.6;
 	}
 
@@ -309,9 +332,9 @@
 	}
 
 	.chip {
-		font-size: 10.5px;
+		font-size: 12px;
 		border: 1px solid var(--line);
-		border-radius: 4px;
+		border-radius: 0;
 		padding: 5px 12px;
 	}
 

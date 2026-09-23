@@ -6,7 +6,7 @@
 <section class="section about" id="about">
 	<div class="grid">
 		<div class="col-label">
-			<span class="mono-label" data-reveal>About — 05</span>
+			<span class="mono-label" data-reveal>About · 02</span>
 			<h2 class="bigline" data-reveal>
 				{t('about.big1')}<br /><em>{t('about.big2')}</em> {t('about.big3')}
 			</h2>
@@ -83,7 +83,6 @@
 	.bigline em {
 		font-style: italic;
 		color: var(--accent);
-		text-shadow: 0 0 40px rgba(201, 242, 79, 0.15);
 	}
 
 	.col-body {
@@ -93,7 +92,7 @@
 	}
 
 	.lede {
-		font-size: 17px;
+		font-size: 16px;
 		line-height: 1.7;
 	}
 
@@ -128,9 +127,9 @@
 	}
 
 	.chip {
-		font-size: 10.5px;
+		font-size: 11px;
 		border: 1px solid var(--line);
-		border-radius: 4px;
+		border-radius: 0;
 		padding: 5px 12px;
 		transition:
 			border-color 0.25s ease,
@@ -167,14 +166,15 @@
 		gap: 16px;
 		padding: 10px 0;
 		border-bottom: 1px solid var(--line);
-		font-size: 13.5px;
+		font-size: 14px;
 		flex-wrap: wrap;
 	}
 
 	.cissuer {
-		font-size: 10px;
-		opacity: 0.55;
+		font-size: 11px;
 		white-space: nowrap;
+		text-transform: none;
+		letter-spacing: 0;
 	}
 
 	.timeline {
@@ -205,16 +205,17 @@
 	}
 
 	.when {
-		font-size: 10.5px;
+		font-size: 11px;
 		opacity: 0.6;
 		color: var(--accent);
 		font-feature-settings: 'tnum';
 	}
 
 	.where {
-		font-size: 10.5px;
-		opacity: 0.55;
+		font-size: 11px;
 		text-align: right;
+		text-transform: none;
+		letter-spacing: 0;
 	}
 
 	@media (max-width: 900px) {

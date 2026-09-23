@@ -33,10 +33,10 @@
 <section class="hero" bind:this={section} id="top">
 	<div class="hero-inner">
 		<div class="hero-main">
-			<div class="kicker mono-label" data-hero-fade>
-		<span>Portfolio — 2026</span>
+			<div class="kicker" data-hero-fade>
+		<span>portfolio · 2026</span>
 		<span class="dot">●</span>
-		<span>Platform Engineering</span>
+		<span>platform engineering</span>
 	</div>
 
 	<h1 class="name">
@@ -49,7 +49,7 @@
 		</span>
 	</h1>
 
-	<p class="role mono-label" data-hero-fade>Platform Engineer</p>
+	<p class="role" data-hero-fade>platform engineer</p>
 
 	<div class="cta-row" data-hero-fade>
 		<a class="cta" href="#work" data-cursor>{t('hero.ctaWork')} <span class="arw">↓</span></a>
@@ -96,7 +96,7 @@
 		pointer-events: none;
 		background: radial-gradient(
 			900px 700px at 82% 18%,
-			rgba(201, 242, 79, 0.05),
+			rgb(201 242 79 / 0.05),
 			transparent 62%
 		);
 	}
@@ -117,6 +117,9 @@
 			grid-template-columns: 1fr;
 		}
 		.term-wrap {
+			max-width: 560px;
+		}
+		.coords {
 			display: none;
 		}
 	}
@@ -127,6 +130,10 @@
 		flex-wrap: wrap;
 		gap: 10px 14px;
 		margin-bottom: clamp(28px, 5vh, 56px);
+		font-family: var(--font-mono);
+		font-size: 11px;
+		letter-spacing: 0;
+		color: var(--muted);
 	}
 
 	.dot {
@@ -175,7 +182,10 @@
 
 	.role {
 		margin-top: clamp(24px, 4vh, 44px);
-		font-size: 13px;
+		font-size: 15px;
+		color: var(--ink-dim);
+		font-family: var(--font-mono);
+		letter-spacing: 0;
 	}
 
 	.cta-row {
@@ -189,8 +199,7 @@
 	.cta {
 		font-family: var(--font-mono);
 		font-size: 12px;
-		letter-spacing: 0.18em;
-		text-transform: uppercase;
+		letter-spacing: 0;
 		padding-bottom: 6px;
 		border-bottom: 1px solid var(--line);
 		transition:
@@ -221,10 +230,9 @@
 		align-items: center;
 		gap: 10px;
 		font-family: var(--font-mono);
-		font-size: 11px;
-		letter-spacing: 0.14em;
-		text-transform: uppercase;
-		color: var(--muted);
+		font-size: 13px;
+		letter-spacing: 0;
+		color: var(--ink-dim);
 	}
 
 	.pulse {
@@ -232,22 +240,11 @@
 		height: 7px;
 		border-radius: 50%;
 		background: var(--accent);
-		animation: pulse 2s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			box-shadow: 0 0 0 0 rgba(201, 242, 79, 0.55);
-		}
-		50% {
-			box-shadow: 0 0 0 7px rgba(201, 242, 79, 0);
-		}
 	}
 
 	.coords {
 		position: absolute;
-		right: var(--gutter);
+		right: max(16px, calc((100vw - min(100vw, 1520px)) / 2 + 16px));
 		bottom: calc(var(--section-y) * 0.55);
 		writing-mode: vertical-rl;
 		opacity: 0.55;

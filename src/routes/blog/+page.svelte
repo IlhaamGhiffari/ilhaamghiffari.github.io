@@ -77,7 +77,7 @@
 		align-items: center;
 		padding: 34px 12px;
 		border-top: 1px solid var(--line);
-		transition: padding-left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 	}
 
 	.rows .row:last-child {
@@ -121,7 +121,7 @@
 
 	@media (hover: hover) {
 		.row:hover {
-			padding-left: 24px;
+			transform: translateX(12px);
 		}
 		.row:hover .arrow {
 			opacity: 1;

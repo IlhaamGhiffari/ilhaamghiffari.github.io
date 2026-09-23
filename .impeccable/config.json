@@ -1,0 +1,128 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "Instrument Serif",
+        "reason": "Display serif brand identity (terminal/hacker), dikonfirmasi user"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "8px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "9px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "12px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "13px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14px",
+        "reason": "Micro console scale — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "15px",
+        "reason": "Hero role line — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "22px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "24px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "26px",
+        "reason": "Row arrow size — DESIGN.md Components"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "30px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "32px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "36px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "38px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "40px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "44px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "56px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "64px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "66px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "96px",
+        "reason": "Serif headline moments — DESIGN.md Typography §Micro Scale"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "128px",
+        "reason": "Contact mailto — DESIGN.md Components §Contact Mail"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": ["**/404.html"],
+        "reason": "Minimal fallback page: huge display 404 + small supporting text by design"
+      },
+      {
+        "rule": "design-system-font",
+        "value": "Arial",
+        "reason": "SvelteKit default error-template fallback (framework-generated, not authored)"
+      }
+    ]
+  }
+}
